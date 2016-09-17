@@ -109,7 +109,6 @@ body
 @media (min-width: 1900px) {
 	.container { width: 1800px; }
 	.navbar-header {width:850px;}
-	#home{display:none;}
 }
 .blue {
 	color: #06C;
