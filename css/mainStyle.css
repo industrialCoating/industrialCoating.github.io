@@ -103,6 +103,7 @@ body
 	#team {height: 700px;}
 	#portfolio {height: 1670px;}
 	#contact {height: 440px;}
+	#home{height: 700px;}
 }
 
 @media (min-width: 1900px) {
