@@ -200,6 +200,7 @@ body
 	position: relative;
 	width: 100%;
 }
+.flex-control-nav {font-size:0 !important;}
 .slider-caption {
 	color:white;
 	margin: 0;
