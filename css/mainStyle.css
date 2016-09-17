@@ -68,7 +68,7 @@ body
 }
 
 @media (min-width: 992px) and (max-width: 1450px) {
-	#services {height: 600px;} 
+	#services {height: 650px;} 
 	#about {height: 800px;}
 	#team {height: 700px;}
 	#portfolio {height: 1670px;}
