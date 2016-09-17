@@ -57,7 +57,7 @@ body
 @media (min-width: 768px) {
 	.container { width: 760px; }
 	.navbar-default .navbar-brand
-	{ font-size: 24px; padding-top: 20px; height: 64px; }
+	{ font-size: 24px; padding-top: 20px; height: 64px; margin: 0 !important;}
 	.navbar-header {width:730px;}
 }
 
@@ -90,6 +90,25 @@ body
 	.navbar-header {width:650px;}
 }
 
+@media (min-width: 1350px) {
+	.container { width: 1350px; }
+	.navbar-header {width:750px;}
+}
+
+@media (min-width: 1500px) {
+	.container { width: 1500px; }
+	.navbar-header {width:750px;}
+	#services {height: 800px;} 
+	#about {height: 800px;}
+	#team {height: 700px;}
+	#portfolio {height: 1670px;}
+	#contact {height: 440px;}
+}
+
+@media (min-width: 1900px) {
+	.container { width: 1800px; }
+	.navbar-header {width:850px;}
+}
 .blue {
 	color: #06C;
 }
@@ -213,7 +232,6 @@ body
 	margin: 40px 0 0 0;
 	-webkit-transition: all 0.4s ease-in-out;
 	transition: all 0.4s ease-in-out;
-	height: 50px;
 	width: 250px;
 	padding: 12px 10px 10px 10px;
 }
