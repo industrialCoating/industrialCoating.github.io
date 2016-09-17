@@ -255,7 +255,7 @@ body
 .features h2
 {
 	font-weight: 400;
-	padding-bottom: 20px;
+	padding: 20px 0;
 }
 .features h3
 {
