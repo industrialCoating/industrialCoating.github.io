@@ -17,7 +17,7 @@ body
 @media (min-width: 360px) {
 	.container { width: 365px; }
 	.navbar-default .navbar-brand
-	{ font-size: 14px; padding-top: 20px; height: 64px; }
+	{ padding-top: 20px; height: 64px; }
 	.navbar-brand {padding: 20px 0 0 0;}
 }
 
@@ -31,7 +31,7 @@ body
 @media (min-width: 472px) {
 	.container { width: 472px; }
 	.navbar-default .navbar-brand
-	{ font-size: 20px; padding-top: 20px; height: 64px; }
+	{ padding-top: 20px; height: 64px; }
 }
 
 
@@ -44,27 +44,27 @@ body
 @media (min-width: 667px) {
 	.container { width: 667px; }
 	.navbar-default .navbar-brand
-	{ font-size: 24px; padding-top: 20px; height: 64px; }
+	{ padding-top: 20px; height: 64px; }
 }
 
 
 @media (min-width: 736px) {
 	.container { width: 736px; }
 	.navbar-default .navbar-brand
-	{ font-size: 26px; padding-top: 20px; height: 64px; }
+	{ padding-top: 20px; height: 64px; }
 }
 
 @media (min-width: 768px) {
 	.container { width: 760px; }
 	.navbar-default .navbar-brand
-	{ font-size: 24px; padding-top: 20px; height: 64px; margin: 0 !important;}
+	{ padding-top: 20px; height: 64px; margin: 0 !important;}
 	.navbar-header {width:730px;}
 }
 
 @media (min-width: 992px) {
 	.container { width: 990px; }
 	.navbar-default .navbar-brand
-	{ font-size: 24px; padding-top: 20px; height: 64px;}
+	{ font-size: 22px; padding-top: 20px; height: 64px;}
 }
 
 @media (min-width: 992px) and (max-width: 1450px) {
@@ -86,7 +86,7 @@ body
 @media (min-width: 1250px) {
 	.container { width: 1250px; }
 	.navbar-default .navbar-brand
-	{ font-size: 30px; padding-top: 20px; height: 64px; }
+	{ padding-top: 20px; height: 64px; }
 	.navbar-header {width:650px;}
 }
 
