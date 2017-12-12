@@ -5,7 +5,7 @@ body
 	font-size: 20px;
 	position: relative;
 }
-
+@media (max-width: 500px) {body{font-size: 15px;}}
 @media (min-width: 310px) {
 	.container { width: 319px; }
 	.navbar-default .navbar-brand
@@ -32,7 +32,6 @@ body
 	.container { width: 472px; }
 	.navbar-default .navbar-brand
 	{ padding-top: 20px; height: 64px; }
-	body{font-size: 15px;}
 }
 
 
