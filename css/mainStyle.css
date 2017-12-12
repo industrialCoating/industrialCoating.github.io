@@ -9,7 +9,7 @@ body
 @media (min-width: 310px) {
 	.container { width: 319px; }
 	.navbar-default .navbar-brand
-	{ font-size: 14px; padding-top: 20px; height: 64px; }
+	{ font-size: 15px; padding-top: 20px; height: 64px; }
 	.navbar-brand {padding: 20px 0 0 0;}
 }
 
@@ -32,6 +32,7 @@ body
 	.container { width: 472px; }
 	.navbar-default .navbar-brand
 	{ padding-top: 20px; height: 64px; }
+	body{font-size: 15px;}
 }
 
 
