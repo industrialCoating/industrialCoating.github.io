@@ -313,7 +313,7 @@
 				<div class="col-sm-6 col-md-4 address">
 					<h3>ADDRESS <i class="fa fa-map-marker"></i></h3>
 					<p>Industrial Coating & Restoration Inc.<br />2534 Oceanside Blvd, Oceanside, Ca 92054</p>
-					<p><i class="fa fa-envelope-o"></i><a href="mailto:michele@industrial-coating-restoration.com">michele@industrial-coating-restoration.com</a></p>
+					<p><i class="fa fa-envelope-o"></i><a style="color:#fff;" href="mailto:michele@industrial-coating-restoration.com">michele@industrial-coating-restoration.com</a></p>
 				</div>
 				<div class="col-sm-6 col-md-4 address">
 					<h3>HOURS <i class="fa fa-home"></i></h3>
@@ -374,6 +374,16 @@
 				event.preventDefault();
 				$('html, body').animate({scrollTop: 0}, 300);
 			})
+		        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+			
+			//chrome fix for anchor tags
+			if (window.location.hash && isChrome) {
+			    setTimeout(function () {
+				var hash = window.location.hash;
+				window.location.hash = "";
+				window.location.hash = hash;
+			    }, 300);
+			}
 		});
 	</script>
 
