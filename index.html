@@ -355,6 +355,16 @@
 	<!-- back to top js -->
 	<script>
 		$(document).ready(function() {
+		
+			//chrome fix for anchor tags
+			if (window.location.hash && isChrome) {
+			    setTimeout(function () {
+				var hash = window.location.hash;
+				window.location.hash = "";
+				window.location.hash = hash;
+			    }, 300);
+			}
+			
 			// FlexSlider 
 		  	$('.flexslider').flexslider({
 		      animation: "fade",
@@ -375,15 +385,6 @@
 				$('html, body').animate({scrollTop: 0}, 300);
 			})
 		        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-			
-			//chrome fix for anchor tags
-			if (window.location.hash && isChrome) {
-			    setTimeout(function () {
-				var hash = window.location.hash;
-				window.location.hash = "";
-				window.location.hash = hash;
-			    }, 300);
-			}
 		});
 	</script>
 
