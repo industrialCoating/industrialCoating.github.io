@@ -40,18 +40,58 @@
         <img src="beltway-location.png">
      </div>   
         
-     <div class="section footer">
+     <div class="section about">
         <h2>ℹ️ About the U9 pilot team</h2>
         <p>The pilot will start with a 2015 boys team in January 2024 after the team is formed with 10 kids. The commitment is:</p>
         <ul class="special">
             <li>📅 2 practices a week for 90-minutes</li> 
             <li>🏅 Tournament once a month</li>
-	    <li>🛠️ Ad-hoc scrimmages & skill sessions</li>
-            <li>⭐ Pilot concludes in June 2024</li>
+	        <li>🛠️ Ad-hoc scrimmages & skill sessions</li>
+            <li>⌛ Pilot concludes in June 2024</li>
         </ul>
+  
+        <h2>⭐ Club Milestones</h2>
+        <div id="content">
+            <ul class="timeline">
+              <li class="event" data-date="NOV">
+                <p>Tryouts</p>
+              </li>
+              <li class="event" data-date="JAN">
+                <p>Start Practices</p>
+              </li>
+              <li class="event" data-date="FEB - JUN">
+                <p>Tournaments</p>
+              </li>
+              <li class="event" data-date="JUN">
+                <p>Pilot Ends</p>
+              </li>
+              <li class="event" data-date="JUN - AUG">
+                <p>Non-Profit Entity</p>
+              </li>
+              <li class="event" data-date="AUG">
+                <p>Tryouts</p>
+              </li>
+              <li class="event" data-date="SEP - DEC">
+                <p>Tournaments</p>
+              </li>
+              <li class="event" data-date="2025">
+                <p>2 or more teams</p>
+              </li>
+              <li class="event" data-date="2026">
+                <p>Nationally ranked teams</p>
+              </li>
+              <li class="event" data-date="2027">
+                <p>Teams funded by sponsors</p>
+              </li>
+            </ul>
+        </div>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0Cdca7vwGpArWAl5uvDPVhccEX-wiVyXF0SPX2AXsCLkfPQ/viewform?usp=sf_link" target="_blank" class="cta-button">Express Interest for Your Son ✅</a><br/><br/>
+    </div>
+
+    <div class="section footer">
         <p><i>If this pilot is a success, we hope to make this a non-profit soccer club that expands to multiple teams. You can help us reach that level by following us on facebook and supporting our page.</i></p>
-        <div class="fb-page" data-href="https://www.facebook.com/703WarriorsSC" data-tabs="timeline" data-width="300" data-height="50" data-small-header="true" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/703WarriorsSC" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/703WarriorsSC">703 Warriors SC</a></blockquote></div></div>
+        <div class="fb-page" data-href="https://www.facebook.com/703WarriorsSC" data-tabs="timeline" data-width="300" data-height="50" data-small-header="true" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/703WarriorsSC" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/703WarriorsSC">703 Warriors SC</a></blockquote></div>
+        <p>© 2023 703 Warriors Soccer Club</p>
     </div>
     
 </body>
@@ -69,10 +109,19 @@
 	        .section {padding: 40px 25%;text-align: center; background-color: #282828; color: #fff; font-family: arial; text-shadow: 0 0 3px black;}
 	        .section h3, .section h2, .section p, .section ul{text-align: left;}
 	        .section p, .section ul{font-size: 20px;}
-            	.section ul{padding-bottom: 20px;}
+            .section ul{padding-bottom: 20px;}
+            .section li{padding-bottom: 5px;}
+            ul.timeline {padding-bottom: 1px;}
 	        .section ul.no,.section ul.checks, .section ul.special{list-style: none;}
-            	.section img {border-radius: 30px; width:80%; min-width: 300px;}
-            	.footer{background-color: #009c6e;}
+            .section img {border-radius: 30px; width:80%; min-width: 300px;}
+            .about{background-color: #009c6e;}
+            .footer{background-color: #000000;}
+            #content {margin-top: 50px;text-align: center;}
+            .timeline {border-left: 4px solid #333;margin: 50px 0 50px 50%;position: relative;padding: 0 50px;list-style: none;text-align: left;max-width: 40%;}
+            .timeline .event {margin-bottom: 50px;position: relative;}
+            .timeline .event:before,.timeline .event:after {position: absolute;display: block;}
+            .timeline .event:before {left: -190px;content: attr(data-date);}
+            .timeline .event:after {box-shadow: 0 0 0 4px #333;left: -57.85px;background: #fff;border-radius: 50%;height: 12px; width: 12px; content: ""; top: 4px;}
 	        @media only screen and (max-width: 760px) {
 			.hero h1 {font-size: 28px; padding-top:60px;} 
 			.hero h3{font-size: 19px;}
@@ -81,6 +130,8 @@
 			.section ul{padding-bottom: 14px;} 
 			.section p, .section ul{font-size: 16px;} 
 			.section{padding: 40px;}
+            ul.timeline {padding-bottom: 0px;}
 		}
+
 	</style>
 </html>
