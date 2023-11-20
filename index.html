@@ -28,12 +28,18 @@
 <body>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0" nonce="ktq5PVIf"></script>
-
-    <div class="hero">
-        <h1>703 Warriors ⚽ Soccer Club</h1>
-        <h3>Empowers athletes to excel in competitive soccer, while preserving parents' sanity.</h3>
-        <p><img class="logo" src="logo.png"/></p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0Cdca7vwGpArWAl5uvDPVhccEX-wiVyXF0SPX2AXsCLkfPQ/viewform?usp=sf_link" target="_blank" class="cta-button">I'm Interested ✅</a><br/>
+    <script type="text/javascript"> function setPlaySpeed() {document.querySelector('video').playbackRate = 0.5;} </script> 
+    <div class="video-wrapper">
+        <video autoplay muted loop poster="yourhero.jpg">
+          <source src="hero2.mp4" type="video/mp4">
+        </video>
+      
+        <div class="header">
+          <h1>703 Warriors ⚽ Soccer Club</h1>
+          <h3>Empowers athletes to excel in competitive soccer, while preserving parents' sanity.</h3>
+          <p><img class="logo" src="logo.png"/></p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0Cdca7vwGpArWAl5uvDPVhccEX-wiVyXF0SPX2AXsCLkfPQ/viewform?usp=sf_link" target="_blank" class="cta-button">I'm Interested ✅</a>
+        </div>
     </div>
 
     <div class="section">
@@ -95,11 +101,13 @@
 </body>
 	<style>
 		body {margin: 0;padding: 0;}
-	        .hero {background-image: url('yourhero.jpg');background-size: cover;background-position: center; height: 700px; text-align: center; padding: 0 10px;}
-	        .hero h1 {font-size: 50px;margin: 0 0 12px 0; padding: 150px 0 0 0; font-family: "Century Gothic", Calibri, Arial, sans-serif; text-shadow: 1px 1px 2px black;}
-	        .hero h1, .hero h3, .cta-button{color: #fff;}
-	        .hero h3, .section h3, .section h2{font-size: 25px; margin:0; padding:0; font-family: Arial; text-shadow: 0 0 3px black;}
-	        .hero p{padding-bottom:10px}
+        	video {object-fit: cover;position: absolute;top: 0;left: 0;height: 100%;width: 100%;}
+        	.video-wrapper {height: 700px;position: relative;overflow: hidden;text-align: center;display: flex;align-items: center;justify-content: center;}
+        	.header{position: relative;color: white;text-shadow: 1px 1px 8px rgba(0,0,0,0.6);}
+	        .header h1 {font-size: 60px;margin: 0 0 12px 0; font-family: "Century Gothic", Calibri, Arial, sans-serif; text-shadow: 1px 1px 2px black;}
+	        .header h1, .header h3, .cta-button{color: #fff;}
+	        .header h3, .section h3, .section h2{font-size: 30px; margin:0; padding:0; font-family: Arial; text-shadow: 0 0 3px black;}
+	        .header p{padding-bottom:10px}
 	        .logo{height:200px; border: 3px solid #fff; border-radius: 50%;}
 	        .social{height:20px; margin-top:20px}
 	        .cta-button {background-color:#5600fb;font-size: 20px;padding: 14px 20px;text-decoration: none;border-radius: 3px; font-family: Arial; box-shadow: 0px 0px 15px rgb(0 0 0 / 40%);border: 1px solid #3b3b3b; text-shadow: 1px 1px 2px black;}
@@ -121,6 +129,6 @@
 		.timeline .event:before,.timeline .event:after {position: absolute;display: block;}
 		.timeline .event:before {left: -190px;content: attr(data-date);}
 		.timeline .event:after {box-shadow: 0 0 0 4px #333;left: -57.85px;background: #fff;border-radius: 50%;height: 12px; width: 12px; content: ""; top: 4px;}
-	        @media only screen and (max-width: 760px) {.hero h1 {font-size: 28px; padding-top:60px;} .hero h3{font-size: 19px;}.cta-button{font-size: 18px; padding:12px 18px;} .hero{height:500px}.section ul{padding-bottom: 14px;} .section p, .section ul{font-size: 16px;} .section{padding: 40px;}ul.timeline {padding-bottom: 0px;}.timeline {margin-left: 40%;}}
+	        @media only screen and (max-width: 760px) {.header h1 {font-size: 28px; padding-top:60px;} .header h3{font-size: 19px;}.cta-button{font-size: 18px; padding:12px 18px;} .header{height:500px}.section ul{padding-bottom: 14px;} .section p, .section ul{font-size: 16px;} .section{padding: 40px;}ul.timeline {padding-bottom: 0px;}.timeline {margin-left: 40%;}}
 	</style>
 </html>
