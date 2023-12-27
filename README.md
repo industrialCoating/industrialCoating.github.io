@@ -1,1 +1,1 @@
-portfolio site for ICR
+Landing page for 703 Warriors SC
