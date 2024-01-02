@@ -154,6 +154,32 @@
             <li>❤️ Youth sports volunteer since 2018</li>
         </ul>
         <img src="founder.jpg" alt="picture of Anees Merzi, the founder of 703 Warriors SC" />
+        <input id="t-collapser" class="toggle" type="checkbox"> 
+        <label for="t-collapser" class="lbl-toggle">BOARD OF DIRECTORS</label>
+        <div class="t-collapse-content">
+            <div class="t-content-inner">
+                <div class="board">
+                    <img src="Dania.jpg" alt="picture of board member, Dania Merzi" />
+                    <p><b>Dania Merzi</b>, President<br>🎓 MBA, Georgetown University<br>💼 Sales Compensation Planning<br>ℹ️ First generation American</p>
+                </div>
+                <div class="board">
+                    <img src="Faezeh.jpg" alt="picture of board member, Faezeh Raei" />
+                    <p><b>Faezeh Raei</b>, Treasurer<br>🎓 PhD, UT-Austin<br>💼 Lending Policy Programs<br>ℹ️ First generation immigrant</p>
+                </div>
+                <div class="board">
+                    <img src="Jinane.jpg" alt="picture of board member, Jinane Bentaouet" />
+                    <p><b>Jinane Bentaouet</b>, Secretary<br>🗣️ Fluent in Arabic, French, Spanish<br>ℹ️ First generation immigrant</p>
+                </div>
+                <div class="board">
+                    <img src="Jordan.jpg" alt="picture of board member, Jordan Gardiner" />
+                    <p><b>Jordan Gardiner</b>, General Board Member<br>🎓 BA, National University<br>💼 Wealth Management Advisor<br>ℹ️ Knows what it takes to make successful partnerships</p>
+                </div>
+                <div class="board">
+                    <img src="Hasan.jpg" alt="picture of board member, Hasan Ghaleb" />
+                    <p><b>Hasan Ghaleb</b>, General Board Member<br>🎓 BA, George Mason University<br>💼 Workforce Planning and Resource Management<br>ℹ️ Brings a wealth of youth soccer knowledge and experience</p>
+                </div>
+            </div>
+        </div>
         <p style="text-align: center">We need our community support so shoot a note to <a href="mailto:703warriors@gmail.com?subject=Would love to learn how I can help!" target="_blank" class="gdoc">703warriors@gmail.com</a> if you want to help! </p>
     </div>
 	
@@ -196,9 +222,11 @@
 		.lbl-toggle:hover {color: #fff;} 
 		.lbl-toggle::before { content: ' '; display: inline-block; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 5px solid currentColor; vertical-align: middle; margin-right: .7rem; transform: translateY(-2px); transition: transform .2s ease-out; } 
 		.toggle:checked+.lbl-toggle::before { transform: rotate(90deg) translateX(-3px); } 
-		.msn-collapse-content, .v-collapse-content, .g-collapse-content, .o-collapse-content { max-height: 0px; overflow: hidden; transition: max-height .25s ease-in-out; margin-bottom: 20px;} 
+		.msn-collapse-content, .v-collapse-content, .g-collapse-content, .o-collapse-content, .t-collapse-content { max-height: 0px; overflow: hidden; transition: max-height .25s ease-in-out; margin-bottom: 20px;} 
 		.toggle:checked + .lbl-toggle + .msn-collapse-content, .toggle:checked + .lbl-toggle + .v-collapse-content, .toggle:checked + .lbl-toggle + .g-collapse-content, .toggle:checked + .lbl-toggle + .o-collapse-content { max-height: 350px; } 
-		.msn-collapse-content .msn-content-inner, .v-collapse-content .v-content-inner, .g-collapse-content .g-content-inner, .o-collapse-content .o-content-inner  { background: #f9f9f9; color: #000; text-shadow: none; border-bottom-left-radius: 7px; border-bottom-right-radius: 7px; padding: 15px 20px 5px 20px;} 
+		.msn-collapse-content .msn-content-inner, .v-collapse-content .v-content-inner, .g-collapse-content .g-content-inner, .o-collapse-content .o-content-inner, .t-collapse-content .t-content-inner  { background: #f9f9f9; color: #000; text-shadow: none; border-bottom-left-radius: 7px; border-bottom-right-radius: 7px; padding: 15px 20px 5px 20px;} 
+		.t-content-inner{width: 100%;}
+		.toggle:checked + .lbl-toggle + .t-collapse-content { max-height: 100%; background-color:#f9f9f9} 
 		ul.timeline {padding-bottom: 1px;}
 		.section ul.no,.section ul.checks, .section ul.special, ul.background{list-style: none;}
 		ul.no{padding-bottom:10px}
@@ -208,6 +236,7 @@
 		.footer p{color:#999; text-align: center; margin: 20px 0}
 		.founder {background-color: rgba(0, 47, 108, 0.92)}
 		.founder img {width:80%; max-width: 300px; border-radius: 40% 40% 5% 5%; border: 1px solid #000; margin-bottom:20px}
+		.t-content-inner img {max-width: 150px; border-radius: 50%; border: none;}
 		#content {margin-top: 50px;text-align: center;}
 		.timeline {border-left: 4px solid #777;margin: 50px 0 50px 50%;position: relative;padding: 0 50px;list-style: none;text-align: left;max-width: 40%;}
 		.timeline .event {margin-bottom: 50px;position: relative;}
@@ -215,6 +244,10 @@
 		.timeline .event:before {left: -250px; content: attr(data-before);}
 		.timeline .event:after {box-shadow: 0 0 0 4px #eee;left: -57.85px;background: #eee;border-radius: 50%;height: 12px; width: 12px; content: ""; top: 4px;}
 		#content\ brief{display: none;}
-		@media only screen and (max-width: 850px) {.header h1 {font-size: 30px; padding-top:60px;} #content\ brief{display: block;} #content\ detailed{display: none;}  .header h3, .section h3, .section h2{font-size: 25px;} .header h3{padding: 0 10px;} .cta-button{font-size: 18px; padding:12px 18px;} .header{height:500px} .section p, .section ul, .subdued{font-size: 16px;} .section{padding: 40px 40px 20px 40px;}ul.timeline {padding-bottom: 0px;} .timeline .event:before {left: -175px;} .footer{background-position: 50% 75%;}}
+		.t-content-inner, .board img{float: left;}
+		.board img{margin: 10px 20px 10px 10px;}
+		.board{clear: both;}
+		.board p{padding-top:30px}
+		@media only screen and (max-width: 850px) {.header h1 {font-size: 30px; padding-top:60px;} #content\ brief{display: block;} #content\ detailed{display: none;}  .header h3, .section h3, .section h2{font-size: 25px;} .header h3{padding: 0 10px;} .cta-button{font-size: 18px; padding:12px 18px;} .header{height:500px} .section p, .section ul, .subdued{font-size: 16px;} .section{padding: 40px 40px 20px 40px;}ul.timeline {padding-bottom: 0px;} .timeline .event:before {left: -175px;} .t-content-inner{width: 90%;} .footer{background-position: 50% 75%;}}
 	</style>
 </html>
