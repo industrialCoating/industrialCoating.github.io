@@ -134,9 +134,9 @@
         </div>
         <div id="content brief">
             <ul class="timeline">
-              <li class="event" data-before="DEC"><p>Form Team</p></li>
-              <li class="event" data-before="JAN"><p>501(c)3</p></li>
-              <li class="event" data-before="FEB-JUN"><p>Tournaments</p></li>
+              <li class="event done" data-before="DEC"><p>Form Team</p></li>
+              <li class="event done" data-before="JAN"><p>501(c)3</p></li>
+              <li class="event inprogress" data-before="FEB-JUN"><p>Tournaments</p></li>
               <li class="event" data-before="JUL"><p>Pilot Ends</p></li>
               <li class="event" data-before="AUG"><p>Tryouts</p></li>
               <li class="event" data-before="202X"><p>Expand Club</p><p>Ranked teams</p><p>Sponsorships</p></li>
@@ -415,6 +415,7 @@
 		.timeline .event:before {left: -250px; content: attr(data-before);}
 		.timeline .event:after {box-shadow: 0 0 0 4px #eee;left: -57.85px;background: #eee;border-radius: 50%;height: 12px; width: 12px; content: ""; top: 4px;}
 		.timeline .event.done:after {background-color: #009b61;box-shadow: 0 0 0 4px #009b61;}
+		.timeline .event.inprogress:after {background-color: #ffde00;box-shadow: 0 0 0 4px #ffde00;}
 		#content\ brief{display: none;} 
 		.t-content-inner, .board img{float: left;}
 		.board img{margin: 10px 20px 10px 10px;}
