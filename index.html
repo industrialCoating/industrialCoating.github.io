@@ -101,10 +101,10 @@
 	    </div>
       <img src="participants.webp" style="border-radius: 0; max-width:100%; width:100%;" alt="Youth Development Event photo with participants">
       <h2><svg height="25px" width="25px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-19.1 -19.1 229.23 229.23" xml:space="preserve" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#4620ff" stroke-width="35"> <path style="fill:#ffffff;" d="M44.33,88.474v15.377h38.417v82.745H0v-82.745h0.002V88.474c0-31.225,8.984-54.411,26.704-68.918 C38.964,9.521,54.48,4.433,72.824,4.433v44.326C62.866,48.759,44.33,48.759,44.33,88.474z M181.107,48.759V4.433 c-18.343,0-33.859,5.088-46.117,15.123c-17.72,14.507-26.705,37.694-26.705,68.918v15.377h0v82.745h82.744v-82.745h-38.417V88.474 C152.613,48.759,171.149,48.759,181.107,48.759z"></path> </g><g id="SVGRepo_iconCarrier"> <path style="fill:#ffffff;" d="M44.33,88.474v15.377h38.417v82.745H0v-82.745h0.002V88.474c0-31.225,8.984-54.411,26.704-68.918 C38.964,9.521,54.48,4.433,72.824,4.433v44.326C62.866,48.759,44.33,48.759,44.33,88.474z M181.107,48.759V4.433 c-18.343,0-33.859,5.088-46.117,15.123c-17.72,14.507-26.705,37.694-26.705,68.918v15.377h0v82.745h82.744v-82.745h-38.417V88.474 C152.613,48.759,171.149,48.759,181.107,48.759z"></path> </g></svg> Testimonials</h2>
-      <div class="testimonials">
-        <button autofocus onclick="show('quote1')">Accessible</button>
-        <button onclick="show('quote2')">Inclusive</button>
-        <button onclick="show('quote3')">Development</button>
+      <div id="testimonials">
+        <button class="btn active" onclick="show('quote1');">Accessible</button>
+        <button class="btn" onclick="show('quote2');">Inclusive</button>
+        <button class="btn" onclick="show('quote3');">Development</button>
       </div>
       <div id="main_quote">Marcel loves soccer and we’ve never been able to give him this opportunity that he has now because <u><b>we honestly can’t afford it</b></u>.<span>-Ashlee P.</span></div>
       <div id="quote1" style="display: none;">Marcel loves soccer and we’ve never been able to give him this opportunity that he has now because <u><b>we honestly can’t afford it</b></u>.<span>-Ashlee P.</span></div>
@@ -274,7 +274,7 @@
 		.header h1 {font-size: 70px;margin:0; font-family: "Century Gothic", Calibri, Arial, sans-serif; text-shadow: 2px 2px 4px black;}
 		.header h1, .header h2, .cta-button, #partnerships h2{color: #fff;}
 		.header h2, .section h3, .section h2, #partnerships h2{font-size: 35px; padding:0; margin:0; font-family: Arial; text-shadow: 1px 1px 6px black;}
-		.header h2{padding-bottom: 50px;text-decoration: underline rgb(17 167 27) 5px; text-underline-offset: 8px;}
+		.header h2{padding-bottom: 50px;text-decoration: underline; -webkit-text-decoration: underline; -webkit-text-underline-offset: 8px; text-underline-offset: 8px; text-decoration-color: rgb(17 167 27); -webkit-text-decoration-color: rgb(17 167 27); -webkit-text-decoration-thickness: 8px; text-decoration-thickness: 8px;}
     nav {position: fixed;top: 150px;left: 15px;width: 100px; background-color: #eef0f1;text-align:center;border-radius:25px;z-index: 1;}
 		#navi span{font-size: 20px;}
 		nav #navi {display: none;font-family: monospace;}
@@ -296,9 +296,9 @@
 		.card h4 > span{font-size:20px;}
 		#main_quote{background-color: #f9f9f9; border-bottom-left-radius: 7px; border-bottom-right-radius: 7px; text-shadow: none; color: #000;padding: 15px 20px 5px 20px; text-align: justify; font-family: monospace; line-height: 25px}
 		#main_quote span{display: block; font-style: italic; padding: 10px 0 10px 0;}
-		.testimonials{padding-top:10px; text-align: left;}
-		.testimonials button{cursor: pointer; border: none; width:120px; height: 40px; border-top-left-radius: 5px; border-top-right-radius: 5px; font-size: 16px; background-color: #7559fe; color:#f9f9f9}
-		.testimonials button:focus{font-weight: bold; outline: none; background-color: #4620ff;}
+		#testimonials{padding-top:10px; text-align: left;}
+		#testimonials button{cursor: pointer; border: none; width:120px; height: 40px; border-top-left-radius: 5px; border-top-right-radius: 5px; font-size: 16px; background-color: #7559fe; color:#f9f9f9}
+		#testimonials .active, .btn:hover{font-weight: bold; outline: none; background-color: #4620ff;}
 		#partnerships{background-color: #000; padding:16px 20px 10px 20px; text-align: center;}
 		#partnerships a{margin: 0 10px;}
 		.support{background-color: #ffee51; border-radius: 0 0 25px 25px;}
@@ -376,7 +376,7 @@
 		logo-carousel[data-astro-cid-lqivs3vl]{width:100%;display:flex;padding:1rem 0 0.5rem 0;overflow:hidden visible}.logo-carousels[data-astro-cid-lqivs3vl]{display:flex;width:200%}.logo-carousel[data-astro-cid-lqivs3vl]{display:flex;align-items:center;flex-shrink:0;margin:0;padding:0;transform:translate(var(--logo-carousel-offset))}.logo-carousel__img-wrapper[data-astro-cid-lqivs3vl]{position:relative;list-style-type:none;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:0 2rem;cursor:pointer;transition:transform .25s ease-in-out}.logo-carousel__img[data-astro-cid-lqivs3vl],.logo-carousel__link[data-astro-cid-lqivs3vl]{object-fit:contain}.logo-carousel__img-wrapper[data-astro-cid-lqivs3vl]:hover{transform:scale(1.2)}.logo-sizer{height:100%}
 		@media only screen and (max-width: 1120px) {.video-wrapper {height: 650px;} .mini-title{display: inline;} .reg-title{display: none;} .visible-xs {display: table-row;background: #efefef;} td:first-child,th:first-child {display: none;} td, th {padding:10px;} .topper{padding-top:15px} th, .entry{font-size: 17px;} .bottomer{padding-bottom:15px}thead{top:50px;}}
 		@media only screen and (max-width: 850px) {.video-wrapper {height: 600px;} .header h1{font-size: 50px; padding-top:60px;} .mobile-ul, .donate{display: inline-flex;} .desktop-ul{display: none;} nav ul{padding:0;} nav{width:100%; border-radius: 0; top:0; position:sticky; box-shadow: 5px 5px 8px #333; border-bottom: 1px solid #333;} nav #navi ul li {display: inline;} #partnerships img, #partnerships svg{margin: 10px 1em;} nav #navi ul li a {padding: 8px 25px;} nav #navi ul li.active {background-color: inherit; border-bottom: ridge 10px #eef0f1; border-radius: 0;} #content\ brief{display: block;} #content\ detailed{display: none;}  .header h2, .section h3, .section h2,  #partnerships h2{font-size: 25px;} th, .entry{font-size: 15px;} .header h2, .section h3, .sponsor-area h3{font-size: 22px;} .cta-button{font-size: 18px; padding:15px 18px;} .section p, .section ul, .subdued{font-size: 16px;} .section{padding: 55px 40px 20px 40px;} ul.timeline {padding-bottom: 0px;} .timeline .event:before {left: -175px;} .t-content-inner, .board img{float:none;} .board p{padding-top:0px; padding-bottom:25px; margin-left:20px;} .board img{margin-left: -15px;} .footer{background-position: 50% 75%;}}
-		@media only screen and (max-width: 500px) {.video-wrapper {height: 580px;} .header p{padding: 5px 0 28px 0;} #partnerships a{margin: 0;} #main_quote{font-size:16px; line-height: 20px;} .testimonials button{width:109px; font-size:14px}}
+		@media only screen and (max-width: 500px) {.video-wrapper {height: 580px;} .header p{padding: 5px 0 28px 0;} #partnerships a{margin: 0;} #main_quote{font-size:16px; line-height: 20px;} #testimonials button{width:109px; font-size:14px}}
 		@media only screen and (max-width: 400px) {.donate{display: none;}}
 	</style>
 
@@ -414,5 +414,11 @@
 		        }
 		      });
 		    };
+        document.querySelectorAll('.btn')
+        .forEach( (btClickEv,_,buttons) =>
+          {
+          btClickEv.onclick = () =>
+            buttons.forEach(bt=>bt.classList.toggle('active',bt===btClickEv))
+        })
 	</script>
 </html>
