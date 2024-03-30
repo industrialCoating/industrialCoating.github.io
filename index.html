@@ -96,14 +96,13 @@
       <img src="participants.webp" style="border-radius: 0; max-width:100%; width:100%;" alt="Youth Development Event photo with participants">
       <h2><svg height="25px" width="25px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-19.1 -19.1 229.23 229.23" xml:space="preserve" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#4620ff" stroke-width="35"> <path style="fill:#ffffff;" d="M44.33,88.474v15.377h38.417v82.745H0v-82.745h0.002V88.474c0-31.225,8.984-54.411,26.704-68.918 C38.964,9.521,54.48,4.433,72.824,4.433v44.326C62.866,48.759,44.33,48.759,44.33,88.474z M181.107,48.759V4.433 c-18.343,0-33.859,5.088-46.117,15.123c-17.72,14.507-26.705,37.694-26.705,68.918v15.377h0v82.745h82.744v-82.745h-38.417V88.474 C152.613,48.759,171.149,48.759,181.107,48.759z"></path> </g><g id="SVGRepo_iconCarrier"> <path style="fill:#ffffff;" d="M44.33,88.474v15.377h38.417v82.745H0v-82.745h0.002V88.474c0-31.225,8.984-54.411,26.704-68.918 C38.964,9.521,54.48,4.433,72.824,4.433v44.326C62.866,48.759,44.33,48.759,44.33,88.474z M181.107,48.759V4.433 c-18.343,0-33.859,5.088-46.117,15.123c-17.72,14.507-26.705,37.694-26.705,68.918v15.377h0v82.745h82.744v-82.745h-38.417V88.474 C152.613,48.759,171.149,48.759,181.107,48.759z"></path> </g></svg> Testimonials</h2>
       <div id="testimonials">
-        <button class="btn active" onclick="show('quote1');">Accessible</button>
-        <button class="btn" onclick="show('quote2');">Inclusive</button>
-        <button class="btn" onclick="show('quote3');">Development</button>
+        <button class="tablinks active" onclick="openQuote(event, 'quote1')">Accessible</button>
+        <button class="tablinks" onclick="openQuote(event, 'quote2')">Inclusive</button>
+        <button class="tablinks" onclick="openQuote(event, 'quote3')">Development</button>
       </div>
-      <div id="main_quote">Marcel loves soccer and we’ve never been able to give him this opportunity that he has now because <u><b>we honestly can’t afford it</b></u>.<span>-Ashlee P.</span></div>
-      <div id="quote1" style="display: none;">Marcel loves soccer and we’ve never been able to give him this opportunity that he has now because <u><b>we honestly can’t afford it</b></u>.<span>-Ashlee P.</span></div>
-      <div id="quote2" style="display: none;">The youth development event was beautiful. My daughter asked me to take her back when we got home because <u><b>she felt very welcome</b></u>!<span>-Mariam A.</span></div>
-      <div id="quote3" style="display: none;">Such a great event where kids can play while also learning about <u><b>mentorship, online safety, and other skills</b></u> that they aren't getting in school.<span>-Hector M.</span></div>
+      <div id="quote1" class="tabcontent" style="display: block;">Marcel loves soccer and we’ve never been able to give him this opportunity that he has now because <u><b>we honestly can’t afford it</b></u>.<span>-Ashlee P.</span></div>
+      <div id="quote2" class="tabcontent">The youth development event was beautiful... My daughter asked me to take her back when we got home because <u><b>she felt very welcome</b></u>!<span>-Mariam A.</span></div>
+      <div id="quote3" class="tabcontent">Such a great event where kids can play while also learning about <u><b>mentorship, online safety, and other skills</b></u> that they need...<span>-Hector M.</span></div>
       <img src="testimonials.webp" style="border-radius: 0; max-width:100%; width:100%; padding:15px 0 20px 0" alt="Youth Development Event photo with participants">
         <!--<ul class="checks">
             <li>✅ Costs are subsidized by sponsors</li>
@@ -288,12 +287,13 @@
 		.y{background: url('y.svg');}
 		.card h3{font-size: 50px; margin:0;}
 		.card h3 > span{font-size:20px;}
-		#main_quote{background-color: #f9f9f9; border-bottom-left-radius: 7px; border-bottom-right-radius: 7px; text-shadow: none; color: #000;padding: 15px 20px 5px 20px; text-align: justify; font-family: monospace; line-height: 25px}
-		#main_quote span{display: block; font-style: italic; padding: 10px 0 10px 0;}
+		#quote1, #quote2, #quote3{background-color: #f9f9f9; border-bottom-left-radius: 7px; border-bottom-right-radius: 7px; text-shadow: none; color: #000;padding: 15px 20px 5px 20px; text-align: justify; font-family: monospace; line-height: 25px}
+		#quote1 span, #quote2 span, #quote3 span{display: block; font-style: italic; padding: 10px 0 10px 0;}
 		#testimonials{padding-top:10px; text-align: left;}
 		#testimonials button{cursor: pointer; border: none; width:120px; height: 40px; border-top-left-radius: 5px; border-top-right-radius: 5px; font-size: 16px; background-color: #7559fe; color:#f9f9f9}
 		#testimonials .active, .btn:hover{font-weight: bold; outline: none; background-color: #4620ff;}
-		#partnerships{background-color: #000; padding:16px 20px 10px 20px; text-align: center;}
+		.tabcontent {display: none;}
+    #partnerships{background-color: #000; padding:16px 20px 10px 20px; text-align: center;}
 		#partnerships a{margin: 0 10px;}
 		.support{background-color: #ffee51; border-radius: 0 0 25px 25px;}
 		.support a{padding-bottom:20px !important; text-transform: uppercase; font-weight: bold;}
@@ -383,7 +383,19 @@
 		gtag('js', new Date());
 		gtag('config', 'G-73RCDTQP4G');
 
-    		function show(param_div_id) {document.getElementById('main_quote').innerHTML = document.getElementById(param_div_id).innerHTML;}
+		    function openQuote(evt, entry) {
+		      var i, tabcontent, tablinks;
+		      tabcontent = document.getElementsByClassName("tabcontent");
+		      for (i = 0; i < tabcontent.length; i++) {
+		        tabcontent[i].style.display = "none";
+		      }
+		      tablinks = document.getElementsByClassName("tablinks");
+		      for (i = 0; i < tablinks.length; i++) {
+		        tablinks[i].className = tablinks[i].className.replace(" active", "");
+		      }
+		      document.getElementById(entry).style.display = "block";
+		      evt.currentTarget.className += " active";
+		    }
 		
     		<!-- navigation logic -->
 		    const sections = document.querySelectorAll("section");
@@ -407,11 +419,5 @@
 		        }
 		      });
 		    };
-        document.querySelectorAll('.btn')
-        .forEach( (btClickEv,_,buttons) =>
-          {
-          btClickEv.onclick = () =>
-            buttons.forEach(bt=>bt.classList.toggle('active',bt===btClickEv))
-        })
 	</script>
 </html>
