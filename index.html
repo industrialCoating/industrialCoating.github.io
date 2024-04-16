@@ -221,12 +221,10 @@
         <div class="container">
           <h2 style="text-align:center;">👋 Reach out to us!</h2><br/>
         <form action="https://docs.google.com/forms/u/2/d/e/1FAIpQLSe7JcNLpa4MAgNS-toRm939yYBzHMq1oSXy_OsaOd6hIU-NCw/formResponse" target="_self" method="POST">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="entry.164280852" required placeholder="Your email...">
-        
         <label for="subject">Message</label>
-            <textarea id="subject" name="entry.542281307" required placeholder="Write something..." style="height:160px"></textarea>
-        
+            <textarea id="subject" name="entry.542281307" minlength="10" maxlength="500" required placeholder="Write something..." style="height:160px"></textarea>    
+            <input type="email" id="email" name="entry.164280852" minlength="10" maxlength="60" title="Please enter your personal gmail, yahoo, etc." required placeholder="Your email...">
+            <label for="email">Email</label>
             <input type="submit" value="Send us your note 📩">
           </form>
         </div>
