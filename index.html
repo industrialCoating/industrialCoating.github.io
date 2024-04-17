@@ -30,8 +30,7 @@
 
   <body>
     <div class="video-wrapper">
-        <video autoplay muted loop playsinline poster="heroImage.webp">
-        </video>
+        <img id="image" src="heroImage.webp" alt="Soccer team photos and action shots" title="Soccer Team photos"></img>
         <section id="home" class="header">
           <p><img class="logo" src="logo.webp" alt="703 Warriors Youth Soccer Club logo crest icon" title="Official 703 Warriors SC Crest"/></p>
           <h1 class="reg-title">703 WARRIORS</h1>
@@ -151,10 +150,11 @@
             <div class="m-content-inner">
                 <p>Registration Fees <span>$400</span></p>
                 <p>Equipment & Uniforms <span>$1200</span></p>
-                <p>Tournament & Game Fees <span>$4200</span></p>
-                <p>Insurance <span>$250</span></p>
-                <p>Coaching Licensing Fees <span>$150</span></p>
-                <p class="total"><i>Estimated Cost Per Team <span><mark>$6,100</mark></span></i></p>
+                <p>Tournament & Game Fees <span>$2400</span></p>
+                <p>Insurance <span>$450</span></p>
+                <p>Portable Lights (one-time cost)<span>$450</span></p>
+                <p>Coaching Licensing Fees <span>$100</span></p>
+                <p class="total"><i>Estimated Cost Per Team <span><mark>$5,000</mark></span></i></p>
             </div>
         </div>
         <input id="w-collapser" class="toggle" type="checkbox" checked>
@@ -274,7 +274,7 @@
 	<style>
 		body {margin: 0;padding: 0;}
 		.mini-title{display: none; padding-top:20px;}
-		.video-wrapper video {object-fit: cover;position: absolute;top: 0;left: 0;height: 100%;width: 100%;}
+		.video-wrapper #image {object-fit: cover;position: absolute;top: 0;left: 0;height: 100%;width: 100%;}
 		.video-wrapper {height: 600px;position: relative;overflow: hidden;text-align: center;display: flex;align-items: center;justify-content: center;}
 		.header{position: relative;}
 		.header h1 {font-size: 70px;margin:0; font-family: "Century Gothic", Calibri, Arial, sans-serif; text-shadow: 2px 2px 4px black;}
@@ -410,6 +410,16 @@
 		gtag('js', new Date());
 		gtag('config', 'G-73RCDTQP4G');
 
+    var image = document.getElementById("image");
+    var images = ["action1.webp", "action2.webp", "action3.webp", "heroImage.webp"];
+    var index = 0;
+
+    function updateImage() {
+      image.src = images[index];
+      index = (index + 1) % images.length;
+    }
+    setInterval(updateImage, 4000);
+
 		    function openQuote(evt, entry) {
 		      var i, tabcontent, tablinks;
 		      tabcontent = document.getElementsByClassName("tabcontent");
@@ -431,7 +441,7 @@
 		      var current = "";
 		          if(window.scrollY > 500) {
 		            document.getElementById("navi").style.display = "block";
-                document.getElementsByTagName("nav")[0].style.display = "block";
+			    document.getElementsByTagName("nav")[0].style.display = "block";
 		        }
 
 		      sections.forEach((section) => {
