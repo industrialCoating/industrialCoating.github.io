@@ -220,7 +220,7 @@
             <label for="email">Email</label>
             <input type="email" id="email" name="entry.164280852" pattern="^[a-z][a-z0-9_.]*@(gmail|yahoo|hotmail|msn|icloud|outlook|googlemail|aol).com$" minlength="10" maxlength="60" title="Please enter your personal gmail, yahoo, etc." required placeholder="Your email...">
             <input type="checkbox" name="bot_checkbox">
-	    <input type="checkbox" name="bot_checkbox2" checked>
+	          <input type="checkbox" name="bot_checkbox2" checked>
             <input type="submit" value="Send us your note 📩">
           </form>
         </div>
@@ -420,7 +420,7 @@
     document.getElementById("contactForm").addEventListener("submit", function(event) {
       var checkbox = document.getElementsByName("bot_checkbox")[0];
       var checkbox2 = document.getElementsByName("bot_checkbox2")[0];    
-      if (checkbox.checked && checkbox2.checked === false) {
+      if (checkbox2.checked === false || checkbox.checked) {
         event.preventDefault();
         alert("We are doing this for the kids and do it in our free time. No one is getting paid as we are all volunteers trying to make a difference in their lives. Have a heart and leave us alone.");
       }
