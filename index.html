@@ -67,6 +67,10 @@
     </nav>
     <section id="about" class="section bluf">
       <div class="english">
+        <h2>🗓️ Upcoming Events</h2>
+        <p>Details shared in our whatsApp groups.</p>
+        <div id="events-container" class="event-container"></div>    
+        
         <h2>🧬 Who We Are</h2>
         <p>Every kid deserves a chance!</p>
         <label for="msn-collapser" class="lbl-toggle">MISSION</label>
@@ -78,7 +82,7 @@
         <label for="msn-collapser" class="lbl-toggle">VISION</label>
         <div class="collapse-content">
             <div class="content-inner">
-              <p style="text-align:justify;">Local chapter in every major US area code</p>
+              <p style="text-align:justify;">Local chapter in every major US area code.</p>
             </div>
         </div>
         <h2>🚧 What We Do</h2>
@@ -415,6 +419,15 @@
 		input[type=submit]:hover {background-color:rgb(6, 197, 124);}
 		form label{float:left}
 		.espanol{display: none;}
+    .event-date,.event-info{padding:15px;display:flex}
+    .event-container{display:flex;flex-direction:column;align-items:center;gap:15px; text-shadow: none !important; padding-bottom: 30px;}
+    .event{display:flex;width:100%;background-color:#fff;border-radius:8px;overflow:hidden;text-align:left;}
+    .event-date{background-color:#ba0303;color:#fff;flex-direction:column;justify-content:center;align-items:center;font-weight:700;text-transform:uppercase}
+    .event-date .day{font-size:24px;font-weight:700;line-height:1}
+    .event-date .month{font-size:14px;letter-spacing:1px}
+    .event-info{flex:1;flex-direction:column;justify-content:center;font-size:18px;color:#333}
+    .event-name{font-weight:700;font-size:18px;display:block}
+    .event-time{font-size:14px;color:#666;margin-top:5px;display:block}
 		@media only screen and (max-width: 1120px) {.video-wrapper {height: 650px;} .visible-xs {display: table-row;background: #efefef;} .wavy1::before {height: 61px;} td:first-child,th:first-child {display: none;} td, th {padding:10px;} .topper{padding-top:15px} th, .entry{font-size: 17px;} .bottomer{padding-bottom:15px}thead{top:50px;}}
 		@media only screen and (max-width: 850px) {.video-wrapper {height: 600px;} .header h1{font-size: 50px;} .mobile-ul, .donate{display: inline-flex;} .desktop-ul{display: none;} nav ul{padding:0;} nav{display:none; width:100%; border-radius: 0; top:0; position:sticky; box-shadow: 5px 5px 8px #333; border-bottom: 1px solid #333;} nav #navi ul li {display: inline;} .card{margin:0 0 30px 0;} #partnerships img, #partnerships svg{margin: 10px 1em;} nav #navi ul li a {padding: 8px 25px;} nav #navi ul li.active {background-color: inherit; border-bottom: ridge 10px #eef0f1; border-radius: 0;} #content\ brief{display: block;} #content\ detailed{display: none;}  .header h2, .section h2,  #partnerships h2{font-size: 25px;} th, .entry{font-size: 15px;} .header h2, .sponsor-area h3{font-size: 22px;} .cta-button{font-size: 18px; padding:15px 18px;} .section p, .section ul, .subdued{font-size: 16px;} .section{padding: 55px 40px 20px 40px;} .t-content-inner, .board img{float:none;} .board p{padding-top:0px; padding-bottom:25px; margin-left:20px;} .board img{margin-left: -15px;}}
 		@media only screen and (max-width: 500px) {.video-wrapper {height: 580px;} .header p{padding: 5px 0 28px 0;} #partnerships a{margin: 0;} #quote1,#quote2,#quote3,#quote4,#quote5,#quote6 {font-size:16px; line-height: 20px;} #testimonials button, #testimonios button{width:104px; font-size:13px} input[type=email], select, textarea, input[type=submit], form label{font-size:16px;}}
@@ -424,15 +437,87 @@
 	</style>
 
 	<script type="text/javascript">
-    //var image = document.getElementById("image");
-    //var images = ["game2.webp", "action3.webp", "participants.webp"];
-    //var index = 0;
+        // Define static events with date and time string
+        const events = [
+            { name: "Strength, Speed, Soccer (Triple S)", date: "2025-02-27", time: "@6:15pm" },
+            { name: "Competitive Soccer Practice", date: "2025-02-28", time: "@6:15pm" },
+            { name: "Arlington Soccer Spring Tournament", date: "2025-03-01", time: "All Day" },
+            { name: "Arlington Soccer Spring Tournament", date: "2025-03-02", time: "All Day" },
+            { name: "Competitive Soccer Practice", date: "2025-03-04", time: "@6:15pm" },
+            { name: "Strength, Speed, Soccer (Triple S)", date: "2025-03-06", time: "@6:15pm" },
+            { name: "Competitive Soccer Practice", date: "2025-03-07", time: "@6:15pm" },
+            { name: "Competitive Soccer Practice", date: "2025-03-11", time: "@6:15pm" },
+            { name: "Strength, Speed, Soccer (Triple S)", date: "2025-03-13", time: "@6:15pm" },
+            { name: "Competitive Soccer Practice", date: "2025-03-14", time: "@6:15pm" },
+            { name: "Competitive Soccer Practice", date: "2025-03-18", time: "@6:15pm" },
+            { name: "Strength, Speed, Soccer (Triple S)", date: "2025-03-20", time: "@6:15pm" },
+            { name: "Competitive Soccer Practice", date: "2025-03-21", time: "@6:15pm" },
+            { name: "Competitive Soccer Practice", date: "2025-03-25", time: "@6:15pm" },
+            { name: "Strength, Speed, Soccer (Triple S)", date: "2025-03-27", time: "@6:15pm" },
+            { name: "Competitive Soccer Practice", date: "2025-03-28", time: "@6:15pm" },
+            { name: "PWC Icebreaker Tournament", date: "2025-03-29", time: "All Day" },
+            { name: "PWC Icebreaker Tournament", date: "2025-03-30", time: "All Day" },
+            { name: "Braden Deahl Youth Development Day", date: "2025-04-06", time: "@2:45pm" }
+        ];
 
-    //function updateImage() {
-      //image.src = images[index];
-      //index = (index + 1) % images.length;
-    //}
-    //setInterval(updateImage, 3000);
+
+        // Get today's date and reset time to midnight
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        // Convert date string to a Date object
+        function parseDate(dateStr) {
+            return new Date(dateStr + "T00:00:00");
+        }
+
+        // Format date to "DD MMM"
+        function formatDate(dateStr) {
+            const date = parseDate(dateStr);
+            const day = date.getDate();
+            const month = date.toLocaleString("en-US", { month: "short" }).toUpperCase();
+            return `<span class="day">${day}</span> <span class="month">${month}</span>`;
+        }
+
+        // Filter and sort upcoming events (include today)
+        const upcomingEvents = events
+            .filter(event => parseDate(event.date) >= today) // Include today's events
+            .sort((a, b) => parseDate(a.date) - parseDate(b.date)) // Sort by date
+            .slice(0, 4); // Show only the first 3 upcoming events
+
+        // Populate the events into the container
+        const container = document.getElementById("events-container");
+        upcomingEvents.forEach(event => {
+            const eventDiv = document.createElement("div");
+            eventDiv.classList.add("event");
+
+            // Date div (left)
+            const dateDiv = document.createElement("div");
+            dateDiv.classList.add("event-date");
+            dateDiv.innerHTML = formatDate(event.date);
+
+            // Info div (right)
+            const infoDiv = document.createElement("div");
+            infoDiv.classList.add("event-info");
+
+            // Event name (new div)
+            const nameDiv = document.createElement("div");
+            nameDiv.classList.add("event-name");
+            nameDiv.textContent = event.name;
+
+            // Event time (new div, displayed below event name)
+            const timeDiv = document.createElement("div");
+            timeDiv.classList.add("event-time");
+            timeDiv.textContent = event.time;
+
+            // Append name and time to infoDiv
+            infoDiv.appendChild(nameDiv);
+            infoDiv.appendChild(timeDiv);
+
+            // Append to event div
+            eventDiv.appendChild(dateDiv);
+            eventDiv.appendChild(infoDiv);
+            container.appendChild(eventDiv);
+        });
 
     function languageSwap() {
       var checkBox = document.getElementById("language-toggle");
