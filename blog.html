@@ -16,87 +16,23 @@
     <title>703 Warriors - Blog</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            text-align: center;
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 20px auto;
-        }
-        .header {
-            margin-bottom: 20px;
-        }
-        .header h1 {
-            font-family: "Century Gothic", Calibri, Arial, sans-serif;
-            font-size: 40px;
-        }
-        .header a {
-            text-decoration: none;
-            color: #007BFF;
-            font-size: 18px;
-        }
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            justify-content: center;
-        }
-        .blog-grid a {
-            text-decoration: none;
-        }
-        .blog-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease-in-out;
-        }
-        .blog-card:hover {
-            transform: translateY(-5px);
-        }
-        .blog-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-        .blog-content {
-            padding: 15px;
-        }
-        .blog-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 5px 0;
-        }
-        .blog-meta {
-            font-size: 14px;
-            color: #555;
-            margin-bottom: 10px;
-            font-style: italic;
-        }
-        .blog-summary {
-            font-size: 16px;
-            color: #000;
-            margin-bottom: 15px;
-        }
-        .read-more {
-            color: #007BFF !important;
-            font-weight: bold;
-            text-align: right;
-        }
-        @media (max-width: 1050px) {
-            .blog-grid {
-                flex-direction: column;
-                align-items: center;
-                display: flex;
-            }
-            .blog-card {
-                width: 100%;
-            }
+        .blog-grid a,.header a{text-decoration:none}
+        body{font-family:Arial,sans-serif;margin:0;padding:0;background-color:#f8f9fa;text-align:center}
+        .container{width:90%;max-width:1200px;margin:20px auto}
+        .header{margin-bottom:20px}
+        .header h1{font-family:"Century Gothic",Calibri,Arial,sans-serif;font-size:40px}
+        .header a{color:#007bff;font-size:18px}
+        .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;justify-content:center}
+        .blog-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 6px rgba(0,0,0,.1);transition:transform .2s ease-in-out}
+        .blog-card:hover{transform:translateY(-5px)}
+        .blog-card img{width:100%;height:180px;object-fit:cover}
+        .blog-content{padding:15px}
+        .blog-title{font-size:18px;font-weight:700;margin:5px 0}
+        .blog-meta{font-size:14px;color:#555;margin-bottom:10px;font-style:italic}
+        .blog-summary{font-size:16px;color:#000;margin-bottom:15px}
+        .read-more{color:#007bff!important;font-weight:700;text-align:right}
+        @media (max-width:1050px){
+            .blog-grid{flex-direction:column;align-items:center;display:flex}.blog-card{width:100%}
         }
     </style>
 </head>
