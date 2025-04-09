@@ -629,24 +629,6 @@
 		      }
 		      document.getElementById(entry).style.display = "block";
 		      evt.currentTarget.className += " active";
-		    }
-
-    		<!-- navigation logic -->
-		    const sections = document.querySelectorAll("section");
-		    const navLi = document.querySelectorAll("nav #navi ul li");
-
-		      sections.forEach((section) => {
-		        const sectionTop = section.offsetTop;
-		        if (pageYOffset >= sectionTop - 40) {
-		          current = section.getAttribute("id"); }
-		      });
-
-		      navLi.forEach((li) => {
-		        li.classList.remove("active");
-		        if (li.classList.contains(current)) {
-		          li.classList.add("active");
-		        }
-		      });
 		    };
 	</script>
 </html>
