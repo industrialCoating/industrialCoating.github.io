@@ -27,6 +27,36 @@
 	<link rel="apple-touch-icon" href="favicon.png">
 	<title>703 Warriors - Youth Development Factory</title>
 </head>
+<style>
+	html{scroll-behavior:smooth;scroll-padding-top:10px; overflow-x: hidden;}
+	body {margin: 0;padding: 0;}
+	.video-wrapper #image {object-fit: cover;position: absolute;top: 0;left: 0;height: 100%;width: 100%;}
+	.video-wrapper {height: 600px;position: relative;overflow: hidden;text-align: center;display: flex;align-items: center;justify-content: center;}
+	.header{position: relative;}
+	.header h1 {font-size: 70px;margin:0; font-family: "Century Gothic", Calibri, Arial, sans-serif; text-shadow: 2px 2px 4px black;}
+	.header h1, .header h2, .cta-button, #partnerships h2{color: #fff;}
+	.header h2, .section h2, #partnerships h2{font-size: 35px; padding:0; margin:0; font-family: Arial;}
+	.header h2{text-shadow: 1px 1px 6px black;}
+	.header h2{padding-bottom: 50px;text-decoration: underline; -webkit-text-decoration: underline; -webkit-text-underline-offset: 8px; text-underline-offset: 8px; text-decoration-color: #fff; -webkit-text-decoration-color: #fff; -webkit-text-decoration-thickness: 8px; text-decoration-thickness: 8px;}
+	nav {position: fixed;top: 150px;left: 15px;width: 100px; background-color: #eef0f1;text-align:center;border-radius:25px;z-index: 1;}
+	#navi span{font-size: 20px;}
+	nav #navi {font-family: monospace;}
+	nav #navi ul li {display: block;}
+	nav #navi ul li.active {background-color: #fff;border-radius:15px;transition: 0.3s;}
+	nav #navi ul li.active a {font-weight:bold;}
+	nav #navi {}
+	nav ul{margin: 0; padding:0;}
+	nav #navi ul li {display: block;}
+	nav #navi ul li a {display: inline-block;text-decoration: none;padding: 20px 10px 10px 10px;color: black;}
+	nav #navi ul li.active {background-color: #fff;border-radius:25px 25px 0 0;transition: 0.3s;}
+	nav #navi ul li.active a {font-weight:bold;}
+	mark{padding:5px 10px; border-radius: 24% 16% 11% 8%; background-color: rgb(255 255 0 / 66%);}
+	.card-container {display: inline-flex; color:#fff}
+	.card {background-color:#000;border: 0.5px solid #636363;padding: 20px 20px 24px 20px; width:180px; margin:10px 5px 40px 5px;}
+	.card span{font-size: 22px;}
+	.card h3{font-size: 50px; margin:0;}
+	.card h3 > span{font-size:20px;}
+</style>
 
   <body>
     <div class="switch" onclick="languageSwap()">
@@ -196,7 +226,7 @@
 		<p>■ Field / Venue Reservations</p>
             </div>
         </div>
-    </div>
+      </div>
       <div class="espanol">
           <h2>🚀 Dónde Necesitamos Ayuda</h2>
           <p>100% de las donaciones apoya directamente a los niños:</p>
@@ -209,7 +239,8 @@
                 <p>■ Cubrir Reservas de Campos</p>
               </div>
           </div>
-      </div>
+        </div>
+	<div class="vid-container"><iframe src="https://www.youtube.com/embed/ltRSdSzeFgg?si=azaVxDkCuNG0H11H" title="YouTube video player of 703 Warriors" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
       </section>
     	<section id="leaders" class="section about-area">
         <h2 class="english">👤 About the Team</h2>
@@ -254,10 +285,6 @@
                   <img src="KH.webp" alt="picture of board member, Kareem Hamad" />
                   <p><b>Kareem Hamad</b>, Board Member<br>🎓 BA, George Mason University<br>💼 Financial Advisor<br>💡 DAF whisperer</p>
               	</div>
-                <!--<div class="board">
-                  <img src="PL.webp" alt="picture of board member, Patrick Leonard" />
-                  <p><b>Patrick Leonard</b>, Board Member<br>🎓 BA, George Mason University<br>💼 Financial Advisor<br>💡 Scalability ninja</p>
-              	</div>-->
             </div>
         </div>
         <div class="container">
@@ -326,8 +353,8 @@
   </div>
 </body>
 	<style>
-		html{scroll-behavior:smooth;scroll-padding-top:10px; overflow-x: hidden;}
-		body {margin: 0;padding: 0;}
+		.vid-container {display: flex;justify-content: center;}
+		.vid-container iframe {aspect-ratio: 16 / 9;width: 100% !important;max-width: 650px;min-width:325px;}
 		.switch {position: fixed; right:2px; top:3px;z-index:1;}
 		.switch > span {position: absolute;top: 14px;pointer-events: none;font-family: 'Helvetica', Arial, sans-serif;font-weight: bold;font-size: 12px;text-shadow: 0 1px 0 rgba(0, 0, 0, .06);width: 50%;text-align: center}
 		input.check-toggle-round-flat:checked ~ .off {color: #000;}
@@ -341,32 +368,6 @@
 		input.check-toggle-round-flat + label:before {top: 2px;left: 2px;bottom: 2px;right: 2px;background-color: #000;-webkit-border-radius: 60px;-moz-border-radius: 60px;-ms-border-radius: 60px;-o-border-radius: 60px;border-radius: 60px;}
 		input.check-toggle-round-flat + label:after {top: 4px;left: 4px;bottom: 4px;width: 78px;background-color: #f1f1f1;-webkit-border-radius: 52px;-moz-border-radius: 52px;-ms-border-radius: 52px;-o-border-radius: 52px;border-radius: 52px;-webkit-transition: margin 0.2s;-moz-transition: margin 0.2s;-o-transition: margin 0.2s;transition: margin 0.2s;}
 		input.check-toggle-round-flat:checked + label:after {margin-left: 74px;}
-		.video-wrapper #image {object-fit: cover;position: absolute;top: 0;left: 0;height: 100%;width: 100%;}
-		.video-wrapper {height: 600px;position: relative;overflow: hidden;text-align: center;display: flex;align-items: center;justify-content: center;}
-		.header{position: relative;}
-		.header h1 {font-size: 70px;margin:0; font-family: "Century Gothic", Calibri, Arial, sans-serif; text-shadow: 2px 2px 4px black;}
-		.header h1, .header h2, .cta-button, #partnerships h2{color: #fff;}
-		.header h2, .section h2, #partnerships h2{font-size: 35px; padding:0; margin:0; font-family: Arial;}
-		.header h2{text-shadow: 1px 1px 6px black;}
-		.header h2{padding-bottom: 50px;text-decoration: underline; -webkit-text-decoration: underline; -webkit-text-underline-offset: 8px; text-underline-offset: 8px; text-decoration-color: #fff; -webkit-text-decoration-color: #fff; -webkit-text-decoration-thickness: 8px; text-decoration-thickness: 8px;}
-		nav {position: fixed;top: 150px;left: 15px;width: 100px; background-color: #eef0f1;text-align:center;border-radius:25px;z-index: 1;}
-		#navi span{font-size: 20px;}
-		nav #navi {font-family: monospace;}
-		nav #navi ul li {display: block;}
-		nav #navi ul li.active {background-color: #fff;border-radius:15px;transition: 0.3s;}
-		nav #navi ul li.active a {font-weight:bold;}
-		nav #navi {}
-		nav ul{margin: 0; padding:0;}
-		nav #navi ul li {display: block;}
-		nav #navi ul li a {display: inline-block;text-decoration: none;padding: 20px 10px 10px 10px;color: black;}
-		nav #navi ul li.active {background-color: #fff;border-radius:25px 25px 0 0;transition: 0.3s;}
-		nav #navi ul li.active a {font-weight:bold;}
-		mark{padding:5px 10px; border-radius: 24% 16% 11% 8%; background-color: rgb(255 255 0 / 66%);}
-		.card-container {display: inline-flex; color:#fff}
-		.card {background-color:#000;border: 0.5px solid #636363;padding: 20px 20px 24px 20px; width:180px; margin:10px 5px 40px 5px;}
-		.card span{font-size: 22px;}
-		.card h3{font-size: 50px; margin:0;}
-		.card h3 > span{font-size:20px;}
 		#quote1, #quote2, #quote3, #quote4, #quote5, #quote6{background-color: #f9f9f9; border-bottom-left-radius: 7px; border-bottom-right-radius: 7px; text-shadow: none; color: #000;padding: 15px 20px 5px 20px; text-align: justify; font-family: monospace; line-height: 25px}
 		#quote1 span, #quote2 span, #quote3 span, #quote4 span, #quote5 span, #quote6 span{display: block; font-style: italic; padding: 10px 0 10px 0;}
 		#testimonials, #testimonios{padding-top:10px; text-align: left;}
