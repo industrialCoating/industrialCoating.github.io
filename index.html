@@ -439,16 +439,31 @@
 		@media only screen and (max-width: 500px) {.video-wrapper {height: 580px;} .header p{padding: 5px 0 28px 0;} #partnerships a{margin: 0;} #quote1,#quote2,#quote3,#quote4,#quote5,#quote6 {font-size:16px; line-height: 20px;} #testimonials button, #testimonios button{width:104px; font-size:13px} input[type=email], select, textarea, input[type=submit], form label{font-size:16px;}}
 		@media only screen and (max-width: 400px) {#testimonials button, #testimonios button{width:99px;} .donate{display: none;} .header h1{font-size:40px;}.header h2{font-size:20px;}}
 		@media only screen and (max-width: 385px) {#testimonials button, #testimonios button{width:94px;}}
+
+		.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(237,237,237);justify-content:center;align-items:center;z-index:9999;font-family:'Segoe UI',sans-serif}
+		.carder{display:flex;flex-direction:row;background:#fff;border-radius:20px;overflow:hidden;border:2px solid #111;box-shadow:0 8px 16px rgba(0,0,0,.1);width:90%;max-width:1000px;height:500px;position:relative}
+		.carder-content{flex:1 1 40%;padding:2rem;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;z-index:2}
+		.carder-image{flex:1 1 60%;background:url('mentorship.jpg') center center/cover no-repeat}
+		.carder-content h1{font-size:3.5rem;color:#e60023;margin-bottom:1rem;font-weight:900}.carder-content p{font-size:1.6rem;color:#333;margin-bottom:2rem;line-height:1.4}
+		.carder-content p u{text-decoration:underline;text-underline-offset:4px;text-decoration-color:#e60023;font-weight:700}
+		.donater-btn{background:0 0;color:#e60023;padding:1rem 2.5rem;font-size:1.3rem;font-weight:700;border:2px solid #e60023;border-radius:50px;cursor:pointer;text-decoration:none;transition:background .3s,transform .3s}
+		.donater-btn:hover{background:#e60023;color:#fff;transform:scale(1.05)}
+		.closer-btn{position:absolute;top:10px;right:15px;font-size:30px;color:#111;background:#fff;border:2px solid #111;border-radius:50%;width:40px;height:40px;display:flex;justify-content:center;align-items:center;cursor:pointer;z-index:10;transition:background .3s,transform .2s}
+		.closer-btn:hover{background:#eee;transform:scale(1.1)}
+		@media (max-width:768px){
+			.carder{flex-direction:column;width:100%;height:100vh;max-width:none;border-radius:0;border:none;box-shadow:none}
+			.carder-image{position:absolute;top:0;left:0;height:100%;width:100%;z-index:1;background:url('mentorship.jpg') center center/cover no-repeat;filter:brightness(.7)}
+			.carder-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,.85);padding:2rem;border-radius:16px;width:80%}
+			.carder-content h1{font-size:2.8rem}
+			.carder-content p{font-size:1.4rem;margin-bottom:1.5rem}
+			.donater-btn{font-size:1.2rem;padding:.8rem 2rem}
+			.closer-btn{top:20px;right:20px}
+		}
 	</style>
 
 	<script type="text/javascript">
         // Define static events with date and time string
 	const events = [
-	    { name: "Competitive Soccer Practice", date: "2025-04-16", time: "OFF" },
-	    { name: "Strength, Speed, Agility", date: "2025-04-17", time: "OFF" },
-	    { name: "Street Soccer", date: "2025-04-20", time: "OFF" },
-	    { name: "Competitive Soccer Practice", date: "2025-04-23", time: "@6:30pm" },
-	    { name: "Strength, Speed, Agility", date: "2025-04-24", time: "@6:30pm" },
 	    { name: "Street Soccer", date: "2025-04-27", time: "@3:00pm" },
 	    { name: "Competitive Soccer Practice", date: "2025-05-01", time: "@6:30pm" },
 	    { name: "Strength, Speed, Agility", date: "2025-05-02", time: "@6:30pm" },
@@ -627,5 +642,31 @@
 		      document.getElementById(entry).style.display = "block";
 		      evt.currentTarget.className += " active";
 		    };
+	</script>
+	<!-- Modal -->
+	<div id="popup-modal" class="modal">
+		<div class="carder">
+			<button class="closer-btn" onclick="closeModal()">&times;</button>
+			<div class="carder-content">
+				<h1>$100</h1>
+				<p>Sponsors <u>One</u> Child<br>for a Year!</p>
+				<a href="https://paypal.com/us/fundraiser/charity/5042253" class="donater-btn" target="_blank">❤️ DONATE</a>
+			</div>
+			<div class="carder-image"></div>
+		</div>
+	</div>
+
+	<script>
+		function showModal() {
+			document.getElementById('popup-modal').style.display = 'flex';
+		}
+
+		function closeModal() {
+			document.getElementById('popup-modal').style.display = 'none';
+		}
+
+		// Show the modal after 4 seconds
+		setTimeout(showModal, 4000);
+
 	</script>
 </html>
