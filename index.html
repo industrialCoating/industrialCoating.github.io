@@ -652,17 +652,18 @@
 		</div>
 	</div>
 
-	<script>
-		function showModal() {
-			document.getElementById('popup-modal').style.display = 'flex';
-		}
+<script>
+  // Load the modal after 11.5 seconds
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const modal = document.getElementById('popup-modal');
+      if (modal) modal.style.display = 'flex';
+    }, 11500);
+  });
 
-		function closeModal() {
-			document.getElementById('popup-modal').style.display = 'none';
-		}
-
-		// Show the modal after 11.5 seconds
-		setTimeout(showModal, 11500);
-
-	</script>
+  function closeModal() {
+    const modal = document.getElementById('popup-modal');
+    if (modal) modal.style.display = 'none';
+  }
+</script>
 </html>
