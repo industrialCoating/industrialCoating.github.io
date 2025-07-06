@@ -98,7 +98,7 @@
     </nav>
     <section id="about" class="section bluf">
         <h2>🗓️ Upcoming Events</h2>
-        <p>Details shared in our WhatsApp groups.</p>
+        <p>Details shared in WhatsApp. <button onclick="downloadICS()" style="padding: 8px; cursor: pointer;">📅 Add to Calendar</button></p>
         <div id="events-container" class="event-container"></div>
 				<label for="msn-collapser" class="lbl-toggle">🏆TOURNAMENTS</label>
 				<div class="collapse-content">
@@ -627,6 +627,29 @@ const events = [
 	{ name: "JULY OPTIONAL TRAINING", date: "2026-07-31", time: "OFFSEASON" }
 ];
 
+	function downloadICS() {
+	  const pad = (num) => String(num).padStart(2, '0');
+	  const formatDate = (dateStr, timeStr) => {
+	    const date = new Date(dateStr + ' ' + (timeStr.includes('@') ? timeStr.split('@')[1] : '00:00'));
+	    return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+	  };
+	
+	  let ics = `BEGIN:VCALENDAR\nVERSION:2.0\nCALSCALE:GREGORIAN\n`;
+	  events.forEach((event, i) => {
+	    const dtStart = formatDate(event.date, event.time);
+	    const dtEnd = formatDate(event.date, event.time); // You can add 1 hour for end if needed
+	    ics += `BEGIN:VEVENT\nUID:${i}@703warriors\nDTSTAMP:${dtStart}\nDTSTART:${dtStart}\nDTEND:${dtEnd}\nSUMMARY:${event.name}\nEND:VEVENT\n`;
+	  });
+	  ics += `END:VCALENDAR`;
+	
+	  const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+	  const url = URL.createObjectURL(blob);
+	  const a = document.createElement('a');
+	  a.href = url;
+	  a.download = '703warriors-events.ics';
+	  a.click();
+	  URL.revokeObjectURL(url);
+	}
 
         // Get today's date and reset time to midnight
         const today = new Date();
