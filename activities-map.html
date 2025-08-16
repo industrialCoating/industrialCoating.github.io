@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
           crossorigin=""/>
+          
+    <!-- Leaflet MarkerCluster CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+
 
     <style>
         /* Basic styling for the page */
@@ -76,6 +81,38 @@
             font-size: 20px;
             margin-right: 8px;
         }
+
+        /* Custom Cluster Styling */
+        .marker-cluster-small, .marker-cluster-medium {
+            background-color: rgba(253, 224, 71, 0.8); /* Yellow */
+        }
+        .marker-cluster-small div, .marker-cluster-medium div {
+            background-color: rgba(250, 204, 21, 0.8);
+        }
+
+        .marker-cluster-large {
+            background-color: rgba(34, 197, 94, 0.8); /* Green */
+        }
+        .marker-cluster-large div {
+            background-color: rgba(22, 163, 74, 0.8);
+        }
+        
+        .marker-cluster-xlarge {
+            background-color: rgba(22, 101, 52, 0.8); /* Dark Green */
+        }
+        .marker-cluster-xlarge div {
+            background-color: rgba(21, 128, 61, 0.8);
+        }
+
+        .marker-cluster {
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            font-weight: bold;
+            line-height: 30px;
+            /* Added text shadow for better readability */
+            text-shadow: 1px 1px 2px black;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -94,6 +131,9 @@
     <!-- Esri Leaflet JS - Plugin to easily use Esri services (like basemaps) -->
     <script src="https://unpkg.com/esri-leaflet@3.0.10/dist/esri-leaflet.js"
             crossorigin=""></script>
+            
+    <!-- Leaflet MarkerCluster JS -->
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
 
     <script>
         // --- 1. INITIALIZE THE MAP ---
@@ -130,7 +170,29 @@
         const icon8 = createEmojiIcon('8️⃣', 40);
 
         // --- 4. CREATE LAYER GROUPS ---
-        const playerLocations = L.layerGroup();
+        // Player locations will now be a MarkerClusterGroup
+        const playerLocations = L.markerClusterGroup({
+            // Reduced radius for tighter clustering. Feel free to adjust this value.
+            maxClusterRadius: 35, // Default is 80, previous was 50
+            iconCreateFunction: function(cluster) {
+                const count = cluster.getChildCount();
+                let sizeClass = 'large';
+                if (count < 5) {
+                    sizeClass = 'small';
+                } else if (count < 15) {
+                    sizeClass = 'medium';
+                } else if (count < 30) {
+                    sizeClass = 'large';
+                } else {
+                    sizeClass = 'xlarge';
+                }
+                return L.divIcon({
+                    html: `<div><span>${count}</span></div>`,
+                    className: `marker-cluster marker-cluster-${sizeClass}`,
+                    iconSize: [40, 40]
+                });
+            }
+        });
         const practiceLocationLayer = L.layerGroup();
         const tournamentLocations = L.layerGroup();
 
@@ -198,9 +260,9 @@
                     const lat = parseFloat(columns[1]);
                     const lng = parseFloat(columns[2]);
                     if (!isNaN(lat) && !isNaN(lng)) {
-                        L.marker([lat, lng], { icon: playerIcon })
-                            .addTo(playerLocations)
+                        const marker = L.marker([lat, lng], { icon: playerIcon })
                             .bindPopup(`<b>${firstName}</b>`);
+                        playerLocations.addLayer(marker); // Add marker to the cluster group
                     } else {
                         console.warn(`Skipping invalid row (bad coordinates): ${row}`);
                     }
@@ -211,7 +273,6 @@
         }
 
         // --- 8. ADD LAYER CONTROL (LEGEND) ---
-        // Define the overlay layers for the control, using HTML to add icons.
         const overlayMaps = {
             "<span class='player-icon player-icon-legend'></span> Players": playerLocations,
             "<span class='emoji-icon-legend'>⚽</span> Practice": practiceLocationLayer,
