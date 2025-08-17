@@ -228,7 +228,7 @@
             // Batch 1
             { lat: 38.8163, lng: -76.7518, date: "Aug 23 – 24", location: "Annapolis Cup", teams: "2015", icon: icon1 },
             { lat: 39.1819, lng: -77.3224, date: "Aug 23 – 24", location: "Marlyand Premier Cup", teams: "2018", icon: icon1 },
-            { lat: 38.8526, lng: -77.3043, date: "Aug 30 – 31", location: "Copa Villareal", teams: "2015, 2017", icon: icon2 },
+            { lat: 38.919841, lng: -77.424838, date: "Aug 30 – 31", location: "Copa Villareal", teams: "2015, 2017", icon: icon2 },
             { lat: 38.8055, lng: -77.0434, date: "Oct 11 – 12", location: "Alexandria Heritage Cup", teams: "2015, 2016, 2017, 2018", icon: icon3 },
             { lat: 38.9342, lng: -77.1776, date: "Nov 22 – 23", location: "Nation's Capital Cup", teams: "2015, 2016, 2017, 2018", icon: icon4 },
             // Batch 2
@@ -246,7 +246,7 @@
         });
 
         // --- 7. FETCH AND PROCESS CSV DATA ---
-        const csvUrl = 'https://cdn.jsdelivr.net/gh/yaboyanees/MerzCake@main/PLC.csv';
+        const csvUrl = 'https://cdn.jsdelivr.net/gh/yaboyanees/MerzCake@main/PLC2.csv';
 
         fetch(csvUrl)
             .then(response => response.ok ? response.text() : Promise.reject('Network response was not ok'))
