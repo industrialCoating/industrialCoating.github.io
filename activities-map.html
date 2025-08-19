@@ -224,108 +224,107 @@
             .bindPopup(`<b>${practiceLocation.title}</b><br>Wednesday @ 6:30pm<br>Thursday @ 6:30pm<br>Sunday @ 4pm`);
 
         // --- 6. ADD TOURNAMENT LOCATIONS ---
-const tournaments = [
-    { 
-        lat: 38.8163, lng: -76.7518, date: "Aug 23 – 24", location: "Annapolis Cup",
-        teams: [
-            { name: "2018", url: "https://system.gotsport.com/org_event/events/40581/schedules?team=3367571" },
-            { name: "2015", url: "https://system.gotsport.com/org_event/events/41641/schedules?team=3370756" }
-        ],
-        icon: icon1
-    },
-    { 
-        lat: 39.1819, lng: -77.3224, date: "Aug 23 – 24", location: "Maryland Premier Cup",
-        teams: [
-            { name: "2017", url: "https://system.gotsport.com/org_event/events/45817/schedules?team=3400250" },
-            { name: "2015", url: "https://system.gotsport.com/org_event/events/45817/schedules?team=3371706" }
-        ],
-        icon: icon1
-    },
-    { 
-        lat: 38.919841, lng: -77.424838, date: "Aug 30 – 31", location: "Copa Villareal",
-        teams: [
-            { name: "2015", url: "" },
-            { name: "2017", url: "" }
-        ],
-        icon: icon2
-    },
-    { 
-        lat: 38.8055, lng: -77.0434, date: "Oct 11 – 12", location: "Alexandria Heritage Cup",
-        teams: [
-            { name: "2015", url: "" },
-            { name: "2016", url: "" },
-            { name: "2017", url: "" },
-            { name: "2018", url: "" }
-        ],
-        icon: icon3
-    },
-    { 
-        lat: 38.9342, lng: -77.1776, date: "Nov 22 – 23", location: "Nation's Capital Cup",
-        teams: [
-            { name: "2015", url: "" },
-            { name: "2016", url: "" },
-            { name: "2017", url: "" },
-            { name: "2018", url: "" }
-        ],
-        icon: icon4
-    },
-    { 
-        lat: 38.88, lng: -77.09, date: "Feb 28 – Mar 1", location: "Arlington Spring Tournament",
-        teams: [
-            { name: "2015", url: "" },
-            { name: "2016", url: "" },
-            { name: "2017", url: "" },
-            { name: "2018", url: "" }
-        ],
-        icon: icon5
-    },
-    { 
-        lat: 38.78, lng: -77.47, date: "Mar 28 – 29", location: "Prince William Courage",
-        teams: [
-            { name: "2015", url: "" },
-            { name: "2016", url: "" },
-            { name: "2017", url: "" },
-            { name: "2018", url: "" }
-        ],
-        icon: icon6
-    },
-    { 
-        lat: 38.78, lng: -77.15, date: "May 23 – 24", location: "SYC Virginian",
-        teams: [
-            { name: "2015", url: "" },
-            { name: "2016", url: "" },
-            { name: "2017", url: "" },
-            { name: "2018", url: "" }
-        ],
-        icon: icon7
-    }, 
-    { 
-        lat: 38.91, lng: -77.04, date: "Jun 20 – 21", location: "DC Cup",
-        teams: [
-            { name: "2015", url: "" },
-            { name: "2016", url: "" },
-            { name: "2017", url: "" },
-            { name: "2018", url: "" }
-        ],
-        icon: icon8
-    }
-];
+        const tournaments = [
+            { 
+                lat: 38.8163, lng: -76.7518, date: "Aug 23 – 24", location: "Annapolis Cup",
+                teams: [
+                    { name: "2018", url: "https://system.gotsport.com/org_event/events/40581/schedules?team=3367571" },
+                    { name: "2015", url: "https://system.gotsport.com/org_event/events/41641/schedules?team=3370756" }
+                ],
+                icon: icon1
+            },
+            { 
+                lat: 39.1819, lng: -77.3224, date: "Aug 23 – 24", location: "Maryland Premier Cup",
+                teams: [
+                    { name: "2017", url: "https://system.gotsport.com/org_event/events/45817/schedules?team=3400250" },
+                    { name: "2015", url: "https://system.gotsport.com/org_event/events/45817/schedules?team=3371706" }
+                ],
+                icon: icon1
+            },
+            { 
+                lat: 38.919841, lng: -77.424838, date: "Aug 30 – 31", location: "Copa Villareal",
+                teams: [
+                    { name: "2015", url: "" },
+                    { name: "2017", url: "" }
+                ],
+                icon: icon2
+            },
+            { 
+                lat: 38.8055, lng: -77.0434, date: "Oct 11 – 12", location: "Alexandria Heritage Cup",
+                teams: [
+                    { name: "2015", url: "" },
+                    { name: "2016", url: "" },
+                    { name: "2017", url: "" },
+                    { name: "2018", url: "" }
+                ],
+                icon: icon3
+            },
+            { 
+                lat: 38.9342, lng: -77.1776, date: "Nov 22 – 23", location: "Nation's Capital Cup",
+                teams: [
+                    { name: "2015", url: "" },
+                    { name: "2016", url: "" },
+                    { name: "2017", url: "" },
+                    { name: "2018", url: "" }
+                ],
+                icon: icon4
+            },
+            { 
+                lat: 38.88, lng: -77.09, date: "Feb 28 – Mar 1", location: "Arlington Spring Tournament",
+                teams: [
+                    { name: "2015", url: "" },
+                    { name: "2016", url: "" },
+                    { name: "2017", url: "" },
+                    { name: "2018", url: "" }
+                ],
+                icon: icon5
+            },
+            { 
+                lat: 38.78, lng: -77.47, date: "Mar 28 – 29", location: "Prince William Courage",
+                teams: [
+                    { name: "2015", url: "" },
+                    { name: "2016", url: "" },
+                    { name: "2017", url: "" },
+                    { name: "2018", url: "" }
+                ],
+                icon: icon6
+            },
+            { 
+                lat: 38.78, lng: -77.15, date: "May 23 – 24", location: "SYC Virginian",
+                teams: [
+                    { name: "2015", url: "" },
+                    { name: "2016", url: "" },
+                    { name: "2017", url: "" },
+                    { name: "2018", url: "" }
+                ],
+                icon: icon7
+            }, 
+            { 
+                lat: 38.91, lng: -77.04, date: "Jun 20 – 21", location: "DC Cup",
+                teams: [
+                    { name: "2015", url: "" },
+                    { name: "2016", url: "" },
+                    { name: "2017", url: "" },
+                    { name: "2018", url: "" }
+                ],
+                icon: icon8
+            }
+        ];
         tournaments.forEach(tourney => {
-            tournaments.forEach(tourney => {
-    let teamsHtml = "";
-    if (Array.isArray(tourney.teams)) {
-        teamsHtml = tourney.teams
-            .map(team => `<a href="${team.url}" target="_blank">${team.name}</a>`)
-            .join(", ");
-    } else {
-        teamsHtml = tourney.teams;
-    }
+            let teamsHtml = "";
+            if (Array.isArray(tourney.teams)) {
+                teamsHtml = tourney.teams
+                    .map(team => `<a href="${team.url}" target="_blank">${team.name}</a>`)
+                    .join(", ");
+            } else {
+                teamsHtml = tourney.teams;
+            }
 
-         const popupContent = `<b>${tourney.date}</b><br>${tourney.location}<br><i>Teams: ${teamsHtml}</i>`;
-            L.marker([tourney.lat, tourney.lng], { icon: tourney.icon })
-              .addTo(tournamentLocations)
-              .bindPopup(popupContent);
-         });
+            const popupContent = `<b>${tourney.date}</b><br>${tourney.location}<br><i>Teams: ${teamsHtml}</i>`;
+                L.marker([tourney.lat, tourney.lng], { icon: tourney.icon })
+                .addTo(tournamentLocations)
+                .bindPopup(popupContent);
+            });
 
         // --- 7. FETCH AND PROCESS CSV DATA ---
         const csvUrl = 'https://cdn.jsdelivr.net/gh/yaboyanees/MerzCake@main/PLC3.csv';
