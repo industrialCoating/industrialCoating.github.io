@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>703 Warriors × Monumental Sports: Donor Microsite</title>
+  <meta name="description" content="Leveling the field for girls in competitive soccer with a scalable, community-powered model. $50,000 proposal for Monumental Sports." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+
+  <style>
+    /* Basic style resets and custom properties */
+    :root {
+      --c1: #4e79a7; --c2: #f28e2b; --c3: #e15759; --c4: #76b7b2;
+      --pink: #e11d48; --blue: #1f77b4;
+    }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      background-color: #f8fafc; /* Tailwind's slate-50 */
+      color: #0f172a; /* Tailwind's slate-900 */
+    }
+    /* Animation for elements scrolling into view */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+    /* D3 Chart Label Styling */
+    .chart-label {
+      font-size: 12px;
+      fill: #ffffff;
+      font-weight: 700;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Floating Header -->
+  
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- HERO / SUMMARY -->
+    <section class="py-16 md:py-24 text-center">
+      <p class="eyebrow text-sm font-semibold uppercase tracking-widest text-rose-600 mb-4 animate-target">Monumental Partnership Opportunity</p>
+      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter text-slate-900 mb-6 animate-target" style="animation-delay: 100ms;">Leveling the Field for Girls in Competitive Soccer</h1>
+      <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-600 mb-12 animate-target" style="animation-delay: 200ms;">703 Warriors is building a repeatable, community-powered model where cost never benches talent. Your <strong class="text-slate-900">$54,450</strong> investment accelerates girls’ access, builds coaching redundancy, and locks in a sustainable blueprint for the DMV and beyond.</p>
+
+      <!-- KPIs -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto animate-target" style="animation-delay: 300ms;">
+        <div class="kpi bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 text-center">
+          <div class="ico text-4xl w-12 h-12 flex items-center justify-center mb-4 mx-auto">
+            <span>👥</span>
+          </div>
+          <div class="text-4xl font-black text-slate-900" id="kidsTotal">641</div>
+          <div class="text-sm text-slate-500 mt-1">Kids Served since 2023</div>
+        </div>
+        <div class="kpi bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 text-center">
+          <div class="ico text-4xl w-12 h-12 flex items-center justify-center mb-4 mx-auto">
+             <span>👧</span>
+          </div>
+          <div class="text-4xl font-black text-slate-900" id="girlsPct">16%</div>
+          <div class="text-sm text-slate-500 mt-1">Girls (and growing)</div>
+        </div>
+        <div class="kpi bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 text-center">
+          <div class="ico text-4xl w-12 h-12 flex items-center justify-center mb-4 mx-auto">
+            <span>⏰</span>
+          </div>
+          <div class="text-4xl font-black text-slate-900" id="volHours">3,973</div>
+          <div class="text-sm text-slate-500 mt-1">Volunteer Hours</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHARTS -->
+    <section class="pb-16 md:pb-24 animate-target">
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="panel bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+          <h3 class="text-xl font-bold mb-4 text-center">Gender Representation</h3>
+          <div id="genderChart" class="flex justify-center items-center"></div>
+        </div>
+        <div class="panel bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+          <h3 class="text-xl font-bold mb-4 text-center">Volunteer Hours Breakdown</h3>
+          <div id="hoursChart" class="flex justify-center items-center"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISION -->
+    <section id="vision" class="py-16 md:py-24 text-center animate-target">
+       <p class="eyebrow text-sm font-semibold uppercase tracking-widest text-rose-600 mb-4">Our Vision</p>
+       <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter text-slate-900 mb-6">A Blueprint for Equitable Youth Sports</h2>
+       <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-600">To redefine access to competitive youth soccer in the U.S. through an innovative, community-powered development model that trains, mentors, and elevates underserved youth to compete at the highest levels.</p>
+    </section>
+
+    <!-- PARTNERS -->
+    <section id="partners" class="py-16 md:py-24 bg-slate-100 animate-target">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="eyebrow text-sm font-semibold uppercase tracking-widest text-rose-600 mb-4">Community Partners</p>
+        <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter text-slate-900 mb-6">Powered by Community, Built on Trust</h2>
+        <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-600 mb-12">Our partners are essential to our mission. They help us keep costs low by providing resources and running youth development activities, ensuring every child has a quality experience without financial barriers.</p>
+        <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+              <div class="bg-white p-4 rounded-xl shadow-sm flex justify-center items-center h-24">
+                  <img src="target.webp" alt="Target Logo" class="h-12 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              </div>
+              <div class="bg-white p-4 rounded-xl shadow-sm flex justify-center items-center h-24">
+                   <img src="gotr.webp" alt="Girls on the Run Logo" class="h-20 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              </div>
+              <div class="bg-white p-4 rounded-xl shadow-sm flex justify-center items-center h-24">
+                  <img src="tmf.webp" alt="Travis Manion Foundation Logo" class="h-24 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              </div>
+              <div class="bg-white p-4 rounded-xl shadow-sm flex justify-center items-center h-24">
+                   <img src="arlcf.webp" alt="Arlington Community Foundation Logo" class="h-16 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHALLENGE & PATHWAY -->
+    <section id="challenge" class="py-16 md:py-24 animate-target">
+      <div class="grid md:grid-cols-5 gap-12 items-center">
+        <div class="md:col-span-2">
+          <p class="eyebrow text-sm font-semibold uppercase tracking-widest text-rose-600 mb-4">Challenge & Pathway</p>
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter text-slate-900 mb-6">Girls’ Access — A Phased Growth Plan</h2>
+          <p class="text-slate-600 mb-6">Our girls’ pipeline is growing, but capacity limits create drop-off risk. We propose a phased plan that prioritizes retention and quality, then expansion:</p>
+          <ul class="space-y-4 text-slate-600">
+            <li class="flex items-start">
+              <span class="text-rose-500 font-bold mr-3 mt-1">›</span>
+              <div><strong>Now–Spring 2026:</strong> Stabilize current girls’ cohorts; add paid women coaches to reduce volunteer burnout and improve continuity.</div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-rose-500 font-bold mr-3 mt-1">›</span>
+              <div><strong>Summer 2026:</strong> Targeted recruitment with community partners; weekend clinics and mentorship sessions.</div>
+            </li>
+            <li class="flex items-start">
+              <span class="text-rose-500 font-bold mr-3 mt-1">›</span>
+              <div><strong>Fall 2026:</strong> Stand up new girls teams as capacity allows without compromising training quality.</div>
+            </li>
+          </ul>
+        </div>
+        <div class="md:col-span-3">
+           <figure class="rounded-2xl overflow-hidden shadow-lg">
+             <img src="joy.webp" alt="U8 Maryland Fall Classic Champions" class="w-full h-auto"/>
+             <figcaption class="text-xs text-slate-500 p-3 bg-white border-t border-slate-200">U8 Maryland Fall Classic Champions</figcaption>
+          </figure>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+            <div class="card bg-white border border-slate-200 rounded-xl p-4 text-center shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <div class="text-4xl mb-3">
+                    <span>📈</span>
+                </div>
+                <div class="font-bold text-slate-800">U11 Boys #29 in VA</div>
+                <div class="text-slate-500 text-xs mt-1">State Ranking</div>
+            </div>
+            <div class="card bg-white border border-slate-200 rounded-xl p-4 text-center shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <div class="text-4xl mb-3">
+                    <span>🏆</span>
+                </div>
+                <div class="font-bold text-slate-800">U8 Fall Classic</div>
+                <div class="text-slate-500 text-xs mt-1">Champions</div>
+            </div>
+            <div class="card bg-white border border-slate-200 rounded-xl p-4 text-center shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <div class="text-4xl mb-3">
+                    <span>🏆</span>
+                </div>
+                <div class="font-bold text-slate-800">U9 Fall Classic</div>
+                <div class="text-slate-500 text-xs mt-1">Champions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI -->
+    <section id="roi" class="py-16 md:py-24 animate-target">
+        <div class="text-center">
+            <p class="eyebrow text-sm font-semibold uppercase tracking-widest text-rose-600 mb-4">Sponsorship ROI</p>
+            <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter text-slate-900 mb-12">High-Visibility Brand Moments Across the DMV</h2>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+                <div class="p-6 lg:p-8">
+                    <h3 class="text-xl font-bold mb-4">Sponsorship Value & Reach</h3>
+                    <p class="bg-slate-50 border border-slate-200 text-slate-600 text-sm p-4 rounded-lg mb-6">
+                        <strong>Audience:</strong> Thousands of families, players, and spectators at 7 DMV tournaments each season (MDSL Premier Cup, Annapolis Cup, Copa Villareal, Nation’s Capital Cup, Arlington Spring Tournament, Prince William Courage, and SYC Virginian.
+                    </p>
+                    <ul class="space-y-3 list-disc list-inside text-slate-600">
+                        <li><strong>Jersey Presence:</strong> Prominent front-of-jersey logo.</li>
+                        <li><strong>On‑Field Presence:</strong> Dual branded tents + sideline banners.</li>
+                        <li><strong>Digital:</strong> Cross‑posted reels on Instagram, YouTube, LinkedIn.</li>
+                        <li><strong>Branding:</strong> "Monumental Sports" Travel Soccer Program.</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 p-6 lg:p-8 flex items-center justify-center border-t lg:border-t-0 lg:border-l border-slate-200">
+                    <figure>
+                        <img src="uniforms.webp" alt="703 Warriors uniforms with Monumental logo" class="w-full h-auto rounded-xl shadow-lg"/>
+                        <figcaption class="text-xs text-slate-500 mt-4 text-center">Front-of-jersey visibility at high-traffic tournaments</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BUDGET -->
+    <section id="budget" class="py-16 md:py-24 animate-target">
+        <div class="text-center">
+            <p class="eyebrow text-sm font-semibold uppercase tracking-widest text-rose-600 mb-4">Budget</p>
+            <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter text-slate-900 mb-12">$54,450: Precisely Targeted to Girls’ Access + Sustainability</h2>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full" id="budgetTable"></table>
+            </div>
+            <div class="text-xs text-slate-500 p-4 bg-slate-50 border-t border-slate-200">703 Warriors will match in-kind through volunteer hours, partner support, and local sponsorships.</div>
+        </div>
+    </section>
+  </main>
+  
+  
+
+  <!-- Tooltip element -->
+  <div id="tt" class="tooltip fixed pointer-events-none bg-slate-800 text-white py-2 px-3 rounded-lg text-sm -translate-x-1/2 -translate-y-[120%] hidden z-[1000]"></div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function(){
+    // ---------------------- Data ----------------------
+    const ORG = {
+      kidsTotal: 641,
+      boysPct: 0.84,
+      girlsPct: 0.16,
+      volunteerHours: [
+        { activity: "Programming", hours: 671.5 },
+        { activity: "Operations", hours: 2409.5 },
+        { activity: "Administration", hours: 587 },
+        { activity: "Fund Raising", hours: 305 }
+      ],
+      tournaments: [
+        "MDSL Premier Cup", "MD United FC Annapolis Cup", "Copa Villareal",
+        "McLean YS Nation's Capital Cup", "Arlington Soccer Spring Tournament",
+        "Prince William Courage Icebreaker", "Springfield Virginian Elite", "DC Soccer Club District Cup"
+      ],
+      budget: [
+        { category: "Female Coaches (4)", description: "Lead weekly training & tournaments", cost: 20000 },
+        { category: "Assistant Coaches (3)", description: "Build sustainability for boys’ teams", cost: 9000 },
+        { category: "Tournaments", description: "7 teams × 7 events × $300 (est.)", cost: 14700 },
+        { category: "Player Registration", description: "91 players × $50", cost: 4500 },
+        { category: "Equipment & Uniforms", description: "Balls, goals, kits", cost: 6250 }
+      ]
+    };
+
+    // ---------------------- Utils ----------------------
+    const usd = n => `$${Math.round(n).toLocaleString()}`;
+    const tt = document.getElementById('tt');
+
+    function addSliceLabels(svg, pieData, arc, formatter){
+      svg.selectAll('text.chart-label')
+        .data(pieData)
+        .join('text')
+        .attr('class', 'chart-label')
+        .attr('transform', d => `translate(${arc.centroid(d)})`)
+        .attr('text-anchor', 'middle')
+        .text(formatter)
+        .style('pointer-events', 'none');
+    }
+
+    // ---------------------- Chart Drawing Functions ----------------------
+    function drawGenderChart() {
+      const el = document.getElementById('genderChart');
+      el.innerHTML = ''; // Clear previous chart
+      const boys = Math.round(ORG.kidsTotal * ORG.boysPct);
+      const girls = ORG.kidsTotal - boys;
+      const data = [
+        {key:'Boys', value:boys, color: getComputedStyle(document.documentElement).getPropertyValue('--blue').trim()},
+        {key:'Girls', value:girls, color: getComputedStyle(document.documentElement).getPropertyValue('--pink').trim()}
+      ];
+      
+      const W = 240, H = 240, R = Math.min(W, H) / 2;
+      const svg = d3.select(el).append('svg').attr('viewBox', `0 0 ${W} ${H}`)
+        .append('g').attr('transform', `translate(${W/2},${H/2})`);
+      
+      const arc = d3.arc().innerRadius(R - 40).outerRadius(R);
+      const pie = d3.pie().sort(null).value(d => d.value);
+      const arcs = pie(data);
+
+      svg.selectAll('path').data(arcs).join('path')
+        .attr('d', arc).attr('fill', d => d.data.color).attr('stroke', '#fff').attr('stroke-width', 4)
+        .on('mousemove', (event, d) => {
+          tt.innerHTML = `${d.data.key}: ${d.data.value}`;
+          tt.style.left = event.clientX + 'px';
+          tt.style.top = event.clientY + 'px';
+          tt.style.display = 'block';
+        })
+        .on('mouseleave', () => { tt.style.display = 'none'; });
+
+      svg.append('text').attr('text-anchor', 'middle').attr('dy', '-0.5em')
+        .style('font-weight', 900).style('font-size', '32px').attr('fill', '#0f172a').text(ORG.kidsTotal);
+      svg.append('text').attr('text-anchor', 'middle').attr('dy', '1.2em')
+        .style('fill', '#64748b').style('font-size', '12px').text('Total Kids Served');
+
+      const pctFmt = d => `${d.data.key} ${(d.data.value/ORG.kidsTotal*100).toFixed(0)}%`;
+      addSliceLabels(svg, arcs, arc, pctFmt);
+    }
+
+    function drawHoursChart() {
+        const el = document.getElementById('hoursChart');
+        el.innerHTML = '';
+        const entries = ORG.volunteerHours;
+        const total = entries.reduce((s, v) => s + v.hours, 0);
+
+        const W = 240, H = 240, R = Math.min(W, H) / 2;
+        const colors = d3.scaleOrdinal().domain(entries.map(d => d.activity))
+            .range([
+                getComputedStyle(document.documentElement).getPropertyValue('--c1').trim(),
+                getComputedStyle(document.documentElement).getPropertyValue('--c2').trim(),
+                getComputedStyle(document.documentElement).getPropertyValue('--c3').trim(),
+                getComputedStyle(document.documentElement).getPropertyValue('--c4').trim()
+            ]);
+
+        const svg = d3.select(el).append('svg').attr('viewBox', `0 0 ${W} ${H}`)
+            .append('g').attr('transform', `translate(${W / 2},${H / 2})`);
+        
+        const arc = d3.arc().innerRadius(R - 40).outerRadius(R);
+        const pie = d3.pie().sort(null).value(d => d.hours);
+        const arcs = pie(entries);
+
+        svg.selectAll('path').data(arcs).join('path')
+            .attr('d', arc).attr('fill', d => colors(d.data.activity)).attr('stroke', '#fff').attr('stroke-width', 4)
+            .on('mousemove', (event, d) => {
+                tt.innerHTML = `${d.data.activity}: ${d.data.hours.toLocaleString()} hrs`;
+                tt.style.left = event.clientX + 'px';
+                tt.style.top = event.clientY + 'px';
+                tt.style.display = 'block';
+            })
+            .on('mouseleave', () => { tt.style.display = 'none'; });
+
+        svg.append('text').attr('text-anchor', 'middle').attr('dy', '-0.5em')
+            .style('font-weight', 900).style('font-size', '32px').attr('fill', '#0f172a').text(total.toLocaleString());
+        svg.append('text').attr('text-anchor', 'middle').attr('dy', '1.2em')
+            .style('fill', '#64748b').style('font-size', '12px').text('Volunteer Hours');
+        
+        const pctFmt = d => {
+            const p = d.data.hours / total * 100;
+            return p > 8 ? `${Math.round(p)}%` : '';
+        };
+        addSliceLabels(svg, arcs, arc, pctFmt);
+    }
+    
+    // ---------------------- Content Population ----------------------
+    function populateContent() {
+      // Budget table
+      const budgetEl = document.getElementById('budgetTable');
+      const thead = `<thead class="bg-slate-50"><tr class="text-left text-xs text-slate-500 uppercase tracking-wider"><th class="p-4 font-semibold">Category</th><th class="p-4 font-semibold">Description</th><th class="p-4 font-semibold text-right">Cost</th></tr></thead>`;
+      const rows = ORG.budget.map(b => `<tr class="border-b border-slate-200"><td class="p-4 font-bold text-slate-800">${b.category}</td><td class="p-4 text-slate-600">${b.description}</td><td class="p-4 text-right font-medium">${usd(b.cost)}</td></tr>`).join('');
+      const total = ORG.budget.reduce((s, b) => s + b.cost, 0);
+      const tbody = `<tbody class="divide-y divide-slate-200">${rows}</tbody>`;
+      const tfoot = `<tfoot class="bg-slate-100"><tr class="font-bold"><td class="p-4">TOTAL</td><td class="p-4 text-slate-600">Direct program delivery + capacity</td><td class="p-4 text-right text-lg">${usd(total)}</td></tr></tfoot>`;
+      budgetEl.innerHTML = thead + tbody + tfoot;
+      
+      // Hero KPIs
+      document.getElementById('volHours').textContent = ORG.volunteerHours.reduce((s,v)=>s+v.hours,0).toLocaleString();
+      document.getElementById('kidsTotal').textContent = ORG.kidsTotal;
+      document.getElementById('girlsPct').textContent = Math.round(ORG.girlsPct*100) + '%';
+    }
+
+    // ---------------------- Scroll Animations ----------------------
+    function setupScrollAnimations() {
+        const targets = document.querySelectorAll('.animate-target');
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        targets.forEach(target => {
+            observer.observe(target);
+        });
+    }
+
+    // ---------------------- Initial Calls ----------------------
+    populateContent();
+    drawGenderChart();
+    drawHoursChart();
+    setupScrollAnimations();
+
+  });
+  </script>
+</body>
+</html>
