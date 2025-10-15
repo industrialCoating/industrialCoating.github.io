@@ -235,11 +235,11 @@
         {key:'Girls', value:girls, color: getComputedStyle(document.documentElement).getPropertyValue('--pink').trim()}
       ];
       
-      const W = 200, H = 200, R = Math.min(W, H) / 2;
+      const W = 160, H = 160, R = Math.min(W, H) / 2;
       const svg = d3.select(el).append('svg').attr('viewBox', `0 0 ${W} ${H}`)
         .append('g').attr('transform', `translate(${W/2},${H/2})`);
       
-      const arc = d3.arc().innerRadius(R - 30).outerRadius(R);
+      const arc = d3.arc().innerRadius(R - 25).outerRadius(R);
       const pie = d3.pie().sort(null).value(d => d.value);
       const arcs = pie(data);
 
@@ -254,7 +254,7 @@
         .on('mouseleave', () => { tt.style.display = 'none'; });
 
       svg.append('text').attr('text-anchor', 'middle').attr('dy', '-0.5em')
-        .style('font-weight', 900).style('font-size', '28px').attr('fill', '#0f172a').text(ORG.kidsTotal);
+        .style('font-weight', 900).style('font-size', '24px').attr('fill', '#0f172a').text(ORG.kidsTotal);
       svg.append('text').attr('text-anchor', 'middle').attr('dy', '1.2em')
         .style('fill', '#64748b').style('font-size', '11px').text('Total Kids Served');
 
@@ -268,7 +268,7 @@
         const entries = ORG.volunteerHours;
         const total = entries.reduce((s, v) => s + v.hours, 0);
 
-        const W = 200, H = 200, R = Math.min(W, H) / 2;
+        const W = 160, H = 160, R = Math.min(W, H) / 2;
         const colors = d3.scaleOrdinal().domain(entries.map(d => d.activity))
             .range([
                 getComputedStyle(document.documentElement).getPropertyValue('--c1').trim(),
@@ -280,7 +280,7 @@
         const svg = d3.select(el).append('svg').attr('viewBox', `0 0 ${W} ${H}`)
             .append('g').attr('transform', `translate(${W / 2},${H / 2})`);
         
-        const arc = d3.arc().innerRadius(R - 30).outerRadius(R);
+        const arc = d3.arc().innerRadius(R - 25).outerRadius(R);
         const pie = d3.pie().sort(null).value(d => d.hours);
         const arcs = pie(entries);
 
@@ -295,7 +295,7 @@
             .on('mouseleave', () => { tt.style.display = 'none'; });
 
         svg.append('text').attr('text-anchor', 'middle').attr('dy', '-0.5em')
-            .style('font-weight', 900).style('font-size', '28px').attr('fill', '#0f172a').text(total.toLocaleString());
+            .style('font-weight', 900).style('font-size', '24px').attr('fill', '#0f172a').text(total.toLocaleString());
         svg.append('text').attr('text-anchor', 'middle').attr('dy', '1.2em')
             .style('fill', '#64748b').style('font-size', '11px').text('Volunteer Hours');
         
@@ -350,3 +350,4 @@
   </script>
 </body>
 </html>
+
