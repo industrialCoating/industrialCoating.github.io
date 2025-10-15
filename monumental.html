@@ -42,7 +42,7 @@
   <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <!-- HERO / SUMMARY -->
-    <section class="py-16 md:py-24 text-center">
+    <section class="pt-16 md:pt-24 pb-8 md:pb-12 text-center">
       <p class="eyebrow text-sm font-semibold uppercase tracking-widest text-rose-600 mb-4 animate-target">A Partnership to Raise the Game in the DMV</p>
       <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter text-slate-900 mb-6 animate-target" style="animation-delay: 100ms;">Building Leaders on and off the Field</h1>
       <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-600 mb-12 animate-target" style="animation-delay: 200ms;">703 Warriors is creating game-changing solutions for our community's youth. We're building a repeatable, community-powered model where cost never benches talent. Your support will accelerate girls’ access, build a sustainable program, and create a blueprint for equitable sports across the DMV.</p>
@@ -235,11 +235,11 @@
         {key:'Girls', value:girls, color: getComputedStyle(document.documentElement).getPropertyValue('--pink').trim()}
       ];
       
-      const W = 240, H = 240, R = Math.min(W, H) / 2;
+      const W = 200, H = 200, R = Math.min(W, H) / 2;
       const svg = d3.select(el).append('svg').attr('viewBox', `0 0 ${W} ${H}`)
         .append('g').attr('transform', `translate(${W/2},${H/2})`);
       
-      const arc = d3.arc().innerRadius(R - 40).outerRadius(R);
+      const arc = d3.arc().innerRadius(R - 30).outerRadius(R);
       const pie = d3.pie().sort(null).value(d => d.value);
       const arcs = pie(data);
 
@@ -254,9 +254,9 @@
         .on('mouseleave', () => { tt.style.display = 'none'; });
 
       svg.append('text').attr('text-anchor', 'middle').attr('dy', '-0.5em')
-        .style('font-weight', 900).style('font-size', '32px').attr('fill', '#0f172a').text(ORG.kidsTotal);
+        .style('font-weight', 900).style('font-size', '28px').attr('fill', '#0f172a').text(ORG.kidsTotal);
       svg.append('text').attr('text-anchor', 'middle').attr('dy', '1.2em')
-        .style('fill', '#64748b').style('font-size', '12px').text('Total Kids Served');
+        .style('fill', '#64748b').style('font-size', '11px').text('Total Kids Served');
 
       const pctFmt = d => `${d.data.key} ${(d.data.value/ORG.kidsTotal*100).toFixed(0)}%`;
       addSliceLabels(svg, arcs, arc, pctFmt);
@@ -268,7 +268,7 @@
         const entries = ORG.volunteerHours;
         const total = entries.reduce((s, v) => s + v.hours, 0);
 
-        const W = 240, H = 240, R = Math.min(W, H) / 2;
+        const W = 200, H = 200, R = Math.min(W, H) / 2;
         const colors = d3.scaleOrdinal().domain(entries.map(d => d.activity))
             .range([
                 getComputedStyle(document.documentElement).getPropertyValue('--c1').trim(),
@@ -280,7 +280,7 @@
         const svg = d3.select(el).append('svg').attr('viewBox', `0 0 ${W} ${H}`)
             .append('g').attr('transform', `translate(${W / 2},${H / 2})`);
         
-        const arc = d3.arc().innerRadius(R - 40).outerRadius(R);
+        const arc = d3.arc().innerRadius(R - 30).outerRadius(R);
         const pie = d3.pie().sort(null).value(d => d.hours);
         const arcs = pie(entries);
 
@@ -295,9 +295,9 @@
             .on('mouseleave', () => { tt.style.display = 'none'; });
 
         svg.append('text').attr('text-anchor', 'middle').attr('dy', '-0.5em')
-            .style('font-weight', 900).style('font-size', '32px').attr('fill', '#0f172a').text(total.toLocaleString());
+            .style('font-weight', 900).style('font-size', '28px').attr('fill', '#0f172a').text(total.toLocaleString());
         svg.append('text').attr('text-anchor', 'middle').attr('dy', '1.2em')
-            .style('fill', '#64748b').style('font-size', '12px').text('Volunteer Hours');
+            .style('fill', '#64748b').style('font-size', '11px').text('Volunteer Hours');
         
         const pctFmt = d => {
             const p = d.data.hours / total * 100;
