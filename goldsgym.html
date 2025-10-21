@@ -54,7 +54,7 @@
             <p class="eyebrow text-sm font-semibold uppercase tracking-widest mb-4 animate-target">Community Strength Initiative</p>
             <h1 class="text-4xl md:text-7xl font-extrabold tracking-tighter mb-6 animate-target" style="animation-delay: 100ms;">Forging Future Champions!</h1>
             <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-white animate-target" style="animation-delay: 200ms;">
-                Gold's Gym builds legacies of strength. 703 Warriors is where that legacy starts. We are a non-profit organization providing free, 10-month Foundational Fitness Program for low-income and immigrant youth in our community. <br><br>We're inviting Gold's Gym to become the official partner in building the next generation of healthy, resilient leaders.
+                Gold's Gym builds legacies of strength. 703 Warriors is where that legacy starts. We are a non-profit organization providing a free, 10-month Foundational Fitness Program for low-income and immigrant youth in our community. <br><br>We're inviting Gold's Gym to become the official partner in building the next generation of healthy, resilient leaders.
             </p>
         </div>
     </section>
@@ -163,11 +163,63 @@
         </div>
     </section>
 
+    <!-- PHASE 6: BUDGET BREAKDOWN -->
+    <section id="budget" class="py-16 md:py-24 animate-target">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="eyebrow text-sm font-semibold uppercase tracking-widest mb-4">Budget Breakdown</p>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter text-slate-900">Powering the 10-Month Program</h2>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full" id="budgetTable">
+                        <!-- Content will be injected by JavaScript -->
+                    </table>
+                </div>
+                <div class="text-xs text-slate-500 p-4 bg-slate-50 border-t border-slate-200">This $15,000 request covers all direct program costs. 703 Warriors matches this investment in-kind via volunteer hours and administrative support.</div>
+            </div>
+        </div>
+    </section>
+
   </main>
 
   <script>
   document.addEventListener('DOMContentLoaded', function(){
-    // Scroll Animations
+
+    // --- Budget Data & Utils ---
+    const usd = n => `$${Math.round(n).toLocaleString()}`;
+    
+    // UPDATED BUDGET
+    const ORG_BUDGET = {
+      budget: [
+        { category: "Program Manager", description: "Provides a stipend for a lead coach to manage volunteer training, curriculum development, and training schedule.", cost: 5500 },
+        { category: "Equipment", description: "Purchase of weights, jump ropes, agility ladders, hurdles, resistance bands, and medicine balls.", cost: 3000 },
+        { category: "Program Apparel (103 Kids)", description: "Branded 'Gold's Gym Community Fitness' training shirts for all participants.", cost: 2000 },
+        { category: "Insurance & Admin Fees", description: "Covers liability insurance for the 10-month program and operational software.", cost: 2000 },
+        { category: "Healthy Snacks & Hydration", description: "Provides post-workout snacks and drinks to aid in recovery and nutrition.", cost: 1500 },
+        { category: "Program Print Materials", description: "Printing of welcome packets, workout logs, and educational materials for families.", cost: 1000 }
+      ]
+    };
+    
+    // --- Budget Table Population ---
+    function populateBudgetTable() {
+      const budgetEl = document.getElementById('budgetTable');
+      if (!budgetEl) return;
+    
+      const thead = `<thead class="bg-slate-50"><tr class="text-left text-xs text-slate-500 uppercase tracking-wider"><th class="p-4 font-semibold">Category</th><th class="p-4 font-semibold">Description</th><th class="p-4 font-semibold text-right">Cost</th></tr></thead>`;
+      
+      const rows = ORG_BUDGET.budget.map(b => `<tr class="border-b border-slate-200"><td class="p-4 align-top font-bold text-slate-800">${b.category}</td><td class="p-4 align-top text-slate-600">${b.description}</td><td class="p-4 align-top text-right font-medium">${usd(b.cost)}</td></tr>`).join('');
+      
+      const total = ORG_BUDGET.budget.reduce((s, b) => s + b.cost, 0);
+      
+      const tbody = `<tbody class="divide-y divide-slate-200">${rows}</tbody>`;
+      
+      const tfoot = `<tfoot class="bg-slate-100"><tr class="font-bold"><td class="p-4 uppercase">Total Request</td><td class="p-4 text-slate-600 hidden md:table-cell">To fully fund the 10-month Foundational Fitness Program.</td><td class="p-4 text-right text-lg">${usd(total)}</td></tr></tfoot>`;
+      
+      budgetEl.innerHTML = thead + tbody + tfoot;
+    }
+
+    // --- Scroll Animations ---
     function setupScrollAnimations() {
         const targets = document.querySelectorAll('.animate-target');
         const observer = new IntersectionObserver((entries, observer) => {
@@ -183,6 +235,9 @@
             observer.observe(target);
         });
     }
+
+    // --- Initial Calls ---
+    populateBudgetTable();
     setupScrollAnimations();
   });
   </script>
