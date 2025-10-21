@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-g" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>703 Warriors × Monumental Sports: Donor Microsite</title>
+  <!-- UPDATED: Page Title -->
+  <title>703 Warriors x Monumental Sports</title>
   <meta name="description" content="Leveling the field for girls in competitive soccer with a scalable, community-powered model. Proposal for Monumental Sports." />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     /* Basic style resets and custom properties */
     :root {
-      --c1: #4e79a7; --c2: #f28e2b; --c3: #e15759; --c4: #76b7b2;
-      --pink: #e11d48; --blue: #1f77b4;
+      --pink: #e11d48;
+      --blue: #1f77b4;
     }
     body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
       background-color: #f8fafc; /* Tailwind's slate-50 */
       color: #0f172a; /* Tailwind's slate-900 */
     }
@@ -28,116 +32,90 @@
       animation: fadeInUp 0.6s ease-out forwards;
       opacity: 0;
     }
-    /* D3 Chart Label Styling */
-    .chart-label {
-      font-size: 12px;
-      fill: #ffffff;
-      font-weight: 700;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
-    }
   </style>
 </head>
 <body class="antialiased">
 
   <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <!-- HERO / SUMMARY -->
-    <section class="pt-16 md:pt-24 pb-8 md:pb-12 text-center">
-      <p class="eyebrow text-sm font-semibold uppercase tracking-widest text-rose-600 mb-4 animate-target">A Partnership to Raise the Game in the DMV</p>
-      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter text-slate-900 mb-6 animate-target" style="animation-delay: 100ms;">Building Leaders on and off the Field</h1>
-      <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-600 mb-12 animate-target" style="animation-delay: 200ms;">703 Warriors is creating game-changing solutions for our community's youth. We're building a repeatable, community-powered model where cost never benches talent. Your support will accelerate girls’ access, build a sustainable program, and create a blueprint for equitable sports across the DMV.</p>
+    <!-- PHASE 1: REWORKED HERO & KPIs -->
+    <section class="pt-16 md:pt-24 pb-12 md:pb-16 text-center">
+      <p class="eyebrow text-sm font-semibold uppercase tracking-widest text-rose-600 mb-4 animate-target">703 Warriors Soccer</p>
+      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter text-slate-900 mb-6 animate-target" style="animation-delay: 100ms;">Who We Are</h1>
+      <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-600 mb-12 animate-target" style="animation-delay: 200ms;">
+        703 Warriors is a community-based travel soccer and mentorship program, serving primarily lower-income children at no cost to them. With high-quality volunteer training sessions three times a week, the program emphasizes fitness, inclusiveness, and teamwork. In just 18 months, <strong>our competitive teams are not only competing with pay-to-play programs but advancing to final rounds and winning!</strong> The demand is growing and support is needed to sustain the program and create new opportunities for girls.
+      </p>
 
-      <!-- KPIs -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto animate-target" style="animation-delay: 300ms;">
+      <!-- UPDATED: KPIs now 2-column, focused on strengths -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto animate-target" style="animation-delay: 300ms;">
         <div class="kpi bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 text-center">
-          <div class="ico text-4xl w-12 h-12 flex items-center justify-center mb-4 mx-auto">
-            <span>👥</span>
-          </div>
           <div class="text-4xl font-black text-slate-900" id="kidsTotal">641</div>
-          <div class="text-sm text-slate-500 mt-1">Kids Served since 2023</div>
+          <div class="text-sm text-slate-500 mt-1">Total Kids Served</div>
         </div>
         <div class="kpi bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 text-center">
-          <div class="ico text-4xl w-12 h-12 flex items-center justify-center mb-4 mx-auto">
-              <span>👧🏾</span>
-          </div>
-          <div class="text-4xl font-black text-slate-900" id="girlsPct">16%</div>
-          <div class="text-sm text-slate-500 mt-1">Girls (and growing)</div>
+          <div class="text-4xl font-black text-slate-900" id="volHours">4,003</div>
+          <div class="text-sm text-slate-500 mt-1">Gracious Volunteer Hours</div>
         </div>
-        <div class="kpi bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 text-center">
-          <div class="ico text-4xl w-12 h-12 flex items-center justify-center mb-4 mx-auto">
-            <span>⏰</span>
-          </div>
-          <div class="text-4xl font-black text-slate-900" id="volHours">3,973</div>
-          <div class="text-sm text-slate-500 mt-1">Volunteer Hours</div>
-        </div>
+        
       </div>
     </section>
 
-    <!-- CHARTS -->
-    <section class="pb-16 md:pb-24 animate-target">
-       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="panel bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-          <h3 class="text-xl font-bold mb-4 text-center">Gender Representation</h3>
-          <div id="genderChart" class="flex justify-center items-center"></div>
-        </div>
-        <div class="panel bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-          <h3 class="text-xl font-bold mb-4 text-center">Volunteer Hours Breakdown</h3>
-          <div id="hoursChart" class="flex justify-center items-center"></div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- NEW: MSE ALIGNMENT SECTION -->
+    <!-- PHASE 2: NEW "COMMUNITY IMPACT" SECTION -->
     <section id="mission" class="py-16 md:py-24 bg-slate-100 rounded-2xl animate-target">
       <div class="max-w-4xl mx-auto text-center">
-          <p class="eyebrow text-sm font-semibold uppercase tracking-widest text-rose-600 mb-4">A Shared Mission</p>
-          <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter text-slate-900 mb-6">Amplifying Community Impact Together</h2>
-          <blockquote class="max-w-3xl mx-auto text-lg md:text-xl text-slate-600 border-l-4 border-rose-500 pl-6 italic">
-              "MSE Foundation is committed to making the region a better place for all by supporting game-changing solutions for our community... Together, we’re raising the game in the DMV."
-          </blockquote>
-          <p class="max-w-3xl mx-auto text-lg text-slate-700 mt-6">
-              This mission is at the heart of what we do. The 703 Warriors program is a game-changing solution in youth sports, and with your help, we can amplify our impact and provide life-changing opportunities for young athletes.
+          <p class="eyebrow text-sm font-semibold uppercase tracking-widest text-rose-600 mb-4">Community Impact</p>
+          <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter text-slate-900 mb-6">Building Leaders On and Off the Field</h2>
+          <!-- UPDATED with Vision Statement -->
+          <p class="max-w-3xl mx-auto text-lg text-slate-700 mt-6 mb-8">
+              The 703 Warriors program is a game-changing solution in youth sports. We're building a repeatable, community-powered model where cost never benches talent, <strong>creating a blueprint for equitable youth sports that could be deployed in communities across the country.</strong> This mission is at the heart of what we do, and with your help, we can amplify our impact and provide life-changing opportunities for young athletes across the DMV.
           </p>
+          <blockquote class="max-w-3xl mx-auto text-lg md:text-xl text-slate-600 border-l-4 border-rose-500 pl-6 italic">
+              "MSE Foundation is committed to making the region a better place for all by supporting game-changing solutions for our community... Together, we're raising the game in the DMV."
+          </blockquote>
       </div>
     </section>
 
-    <!-- UPDATED: CHALLENGE & PATHWAY -->
+    <!-- PHASE 3: REFRAMED "THE OPPORTUNITY" (FOR GIRLS) -->
     <section id="challenge" class="py-16 md:py-24 animate-target">
       <div class="grid md:grid-cols-5 gap-12 items-center">
         <div class="md:col-span-2">
           <p class="eyebrow text-sm font-semibold uppercase tracking-widest text-rose-600 mb-4">The Opportunity</p>
           <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter text-slate-900 mb-6">Why This Is Needed Now</h2>
-          <p class="text-slate-600 mb-6">For many girls, especially girls of color, sports are a critical pathway to developing the confidence and leadership skills that prepare them for future success. Our program is intentionally designed to foster these characteristics.</p>
+          <p class="text-slate-600 mb-6">For many girls, especially girls of color, sports are a critical pathway to developing confidence and leadership skills that prepare them for future success. Our program is expanding, intentionally designed to foster these characteristics.</p>
           <ul class="space-y-4 text-slate-600">
             <li class="flex items-start">
-              <span class="text-rose-500 font-bold mr-3 mt-1">›</span>
-              <div><strong>Developing Leaders:</strong> We create an environment where girls feel empowered to lead on the field, a skill that translates directly to their schools and communities as they grow.</div>
+              <span class="text-rose-500 font-bold mr-3 mt-1">></span>
+              <div><strong>Developing Leaders:</strong> Create an environment where girls feel empowered to lead on the field. A skill that translates directly to their schools and communities as they grow.</div>
             </li>
             <li class="flex items-start">
-              <span class="text-rose-500 font-bold mr-3 mt-1">›</span>
-              <div><strong>Building Confidence:</strong> Through soccer, girls learn resilience, teamwork, and self-belief, giving them the tools to take on leadership roles as adults.</div>
+              <span class="text-rose-500 font-bold mr-3 mt-1">></span>
+              <div><strong>Building Confidence:</strong> Resilience, teamwork, and self-belief! Equip them with the tools to take on leadership roles as adults.</div>
             </li>
             <li class="flex items-start">
-              <span class="text-rose-500 font-bold mr-3 mt-1">›</span>
-              <div><strong>Intentional Coaching:</strong> Our coaches are selected and trained to be mentors who foster character, confidence, and leadership, ensuring a positive and impactful experience.</div>
+              <span class="text-rose-500 font-bold mr-3 mt-1">></span>
+              <div><strong>Intentional Coaching:</strong> Coaches selected and trained to be mentors who foster character, confidence, and leadership.</div>
             </li>
           </ul>
         </div>
         <div class="md:col-span-3">
-          <!-- IMAGE UPDATED per feedback -->
-           <figure class="rounded-2xl overflow-hidden shadow-lg">
-             <img src="girl-power.webp" alt="A diverse group of young female soccer players huddle with their coach" class="w-full h-auto object-cover aspect-[4/3]"/>
-             <figcaption class="text-xs text-slate-500 p-3 bg-white border-t border-slate-200">Our program focuses on mentorship and building future leaders.</figcaption>
-           </figure>
+          <figure class="rounded-2xl overflow-hidden shadow-lg">
+            <!-- UPDATED: Using absolute image path for reliable loading -->
+            <img src="girl-power.webp" alt="A diverse group of young female soccer players huddle with their coach" class="w-full h-auto object-cover aspect-[4/3]"/>
+            <figcaption class="text-xs text-slate-500 p-3 bg-white border-t border-slate-200">Our program focuses on mentorship and building future leaders.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- NEW: SPONSORSHIP TIERS -->
+    <!-- PHASE 4: ENHANCED SPONSORSHIP TIERS -->
     <section id="sponsorship" class="py-16 md:py-24 animate-target">
         <div class="text-center">
             <p class="eyebrow text-sm font-semibold uppercase tracking-widest text-rose-600 mb-4">Sponsorship Opportunities</p>
-            <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter text-slate-900 mb-12">Invest in a Future Leader</h2>
+            <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter text-slate-900 mb-6">Invest in a Future Leader</h2>
+            <!-- NEW: Micro-impact framing text -->
+            <p class="max-w-2xl mx-auto text-slate-600 text-lg mb-12">
+              While our primary partnership opportunities are below, every dollar has impact. <strong>Just $100 is enough to cover one child's participation for 10-months!</strong>
+            </p>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <!-- Girls' Program Tier -->
@@ -146,9 +124,9 @@
                 <p class="text-5xl font-extrabold text-rose-600 my-4">$20,000</p>
                 <p class="text-slate-600 mb-6 flex-grow">Directly fund the expansion of our girls' program. This investment covers the cost of four dedicated female coaches, ensuring our girls have strong mentors and role models.</p>
                 <ul class="space-y-3 list-disc list-inside text-slate-600 mb-8">
-                    <li><strong>Your name on all girls' team kits</strong></li>
-                    <li><strong>Prominent banner at girls' tournaments</strong></li>
-                    <li>Digital and on-field recognition</li>
+                    <li><strong>MSE logo on all girls' jersey's</strong></li>
+                    <li><strong>Prominent banner at all girls' tournaments</strong></li>
+                    <li><strong>Digital and on-field recognition</strong></li>
                 </ul>
                 <a href="#budget" class="mt-auto inline-block text-center bg-rose-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-rose-700 transition-colors">Sponsor the Girls' Program</a>
             </div>
@@ -158,21 +136,20 @@
                 <p class="text-5xl font-extrabold text-slate-800 my-4">$54,450</p>
                 <p class="text-slate-600 mb-6 flex-grow">Become the title sponsor for all 703 Warriors teams. This comprehensive package funds our entire proposed budget, ensuring sustainability and growth for both girls' and boys' programs.</p>
                  <ul class="space-y-3 list-disc list-inside text-slate-600 mb-8">
-                    <li><strong>Front-of-jersey logo for ALL teams</strong></li>
-                    <li>Title sponsor recognition ("703 Warriors powered by...")</li>
-                    <li>Maximum brand visibility across the DMV</li>
+                    <li><strong>Prominent MSE logo on ALL jersey's</strong></li>
+                    <li><strong>"Monumental Sports Travel Soccer Program"</strong></li>
+                    <li><strong>Maximum brand visibility across the DMV</strong></li>
                 </ul>
                 <a href="#budget" class="mt-auto inline-block text-center bg-slate-800 text-white font-semibold py-3 px-6 rounded-lg hover:bg-slate-900 transition-colors">Become Presenting Sponsor</a>
             </div>
         </div>
     </section>
 
-    <!-- BUDGET -->
+    <!-- BUDGET (Unchanged) -->
     <section id="budget" class="py-16 md:py-24 animate-target">
         <div class="text-center">
             <p class="eyebrow text-sm font-semibold uppercase tracking-widest text-rose-600 mb-4">Budget Breakdown</p>
-            <!-- UPDATED: Title clarifies the total ask -->
-            <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter text-slate-900 mb-12">$54,450: Fueling Girls’ Access + Program Sustainability</h2>
+            <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter text-slate-900 mb-12">$54,450: Fueling Girls' Access + Program Sustainability</h2>
         </div>
         <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
             <div class="overflow-x-auto">
@@ -183,26 +160,15 @@
     </section>
   </main>
   
-  <!-- Tooltip element -->
-  <div id="tt" class="tooltip fixed pointer-events-none bg-slate-800 text-white py-2 px-3 rounded-lg text-sm -translate-x-1/2 -translate-y-[120%] hidden z-[1000]"></div>
-
   <script>
   document.addEventListener('DOMContentLoaded', function(){
     // ---------------------- Data ----------------------
     const ORG = {
       kidsTotal: 641,
-      boysPct: 0.84,
-      girlsPct: 0.16,
-      volunteerHours: [
-        { activity: "Programming", hours: 671.5 },
-        { activity: "Operations", hours: 2409.5 },
-        { activity: "Administration", hours: 587 },
-        { activity: "Fund Raising", hours: 305 }
-      ],
-      // UPDATED: Budget descriptions are now clearer per feedback
+      volunteerHours: 4003, // Using the stronger number from original code
       budget: [
-        { category: "Female Coaches (4)", description: "Fund dedicated coaches to lead weekly training & tournaments for our new girls' teams.", cost: 20000 },
-        { category: "Assistant Coaches (3)", description: "Build coaching depth and sustainability for our established boys’ teams.", cost: 9000 },
+        { category: "Female Coaches (4)", description: "Fund dedicated coaches to lead our new girls' teams.", cost: 20000 },
+        { category: "Assistant Coaches (3)", description: "Build coaching depth and sustainability for our established boys' teams.", cost: 9000 },
         { category: "Tournaments (All Teams)", description: "Entry fees for 7 teams (including 4 girls' teams) across 7 regional events.", cost: 14700 },
         { category: "Player Registration (All Teams)", description: "Covers league registration fees for 91 players across all teams.", cost: 4500 },
         { category: "Equipment & Uniforms (All Teams)", description: "New kits, balls, goals, and essential training gear for all players.", cost: 6250 }
@@ -211,100 +177,6 @@
 
     // ---------------------- Utils ----------------------
     const usd = n => `$${Math.round(n).toLocaleString()}`;
-    const tt = document.getElementById('tt');
-
-    function addSliceLabels(svg, pieData, arc, formatter){
-      svg.selectAll('text.chart-label')
-        .data(pieData)
-        .join('text')
-        .attr('class', 'chart-label')
-        .attr('transform', d => `translate(${arc.centroid(d)})`)
-        .attr('text-anchor', 'middle')
-        .text(formatter)
-        .style('pointer-events', 'none');
-    }
-
-    // ---------------------- Chart Drawing Functions ----------------------
-    function drawGenderChart() {
-      const el = document.getElementById('genderChart');
-      el.innerHTML = ''; // Clear previous chart
-      const boys = Math.round(ORG.kidsTotal * ORG.boysPct);
-      const girls = ORG.kidsTotal - boys;
-      const data = [
-        {key:'Boys', value:boys, color: getComputedStyle(document.documentElement).getPropertyValue('--blue').trim()},
-        {key:'Girls', value:girls, color: getComputedStyle(document.documentElement).getPropertyValue('--pink').trim()}
-      ];
-      
-      const W = 160, H = 160, R = Math.min(W, H) / 2;
-      const svg = d3.select(el).append('svg').attr('viewBox', `0 0 ${W} ${H}`)
-        .append('g').attr('transform', `translate(${W/2},${H/2})`);
-      
-      const arc = d3.arc().innerRadius(R - 25).outerRadius(R);
-      const pie = d3.pie().sort(null).value(d => d.value);
-      const arcs = pie(data);
-
-      svg.selectAll('path').data(arcs).join('path')
-        .attr('d', arc).attr('fill', d => d.data.color).attr('stroke', '#fff').attr('stroke-width', 4)
-        .on('mousemove', (event, d) => {
-          tt.innerHTML = `${d.data.key}: ${d.data.value}`;
-          tt.style.left = event.clientX + 'px';
-          tt.style.top = event.clientY + 'px';
-          tt.style.display = 'block';
-        })
-        .on('mouseleave', () => { tt.style.display = 'none'; });
-
-      svg.append('text').attr('text-anchor', 'middle').attr('dy', '-0.5em')
-        .style('font-weight', 900).style('font-size', '24px').attr('fill', '#0f172a').text(ORG.kidsTotal);
-      svg.append('text').attr('text-anchor', 'middle').attr('dy', '1.2em')
-        .style('fill', '#64748b').style('font-size', '11px').text('Total Kids Served');
-
-      const pctFmt = d => `${d.data.key} ${(d.data.value/ORG.kidsTotal*100).toFixed(0)}%`;
-      addSliceLabels(svg, arcs, arc, pctFmt);
-    }
-
-    function drawHoursChart() {
-        const el = document.getElementById('hoursChart');
-        el.innerHTML = '';
-        const entries = ORG.volunteerHours;
-        const total = entries.reduce((s, v) => s + v.hours, 0);
-
-        const W = 160, H = 160, R = Math.min(W, H) / 2;
-        const colors = d3.scaleOrdinal().domain(entries.map(d => d.activity))
-            .range([
-                getComputedStyle(document.documentElement).getPropertyValue('--c1').trim(),
-                getComputedStyle(document.documentElement).getPropertyValue('--c2').trim(),
-                getComputedStyle(document.documentElement).getPropertyValue('--c3').trim(),
-                getComputedStyle(document.documentElement).getPropertyValue('--c4').trim()
-            ]);
-
-        const svg = d3.select(el).append('svg').attr('viewBox', `0 0 ${W} ${H}`)
-            .append('g').attr('transform', `translate(${W / 2},${H / 2})`);
-        
-        const arc = d3.arc().innerRadius(R - 25).outerRadius(R);
-        const pie = d3.pie().sort(null).value(d => d.hours);
-        const arcs = pie(entries);
-
-        svg.selectAll('path').data(arcs).join('path')
-            .attr('d', arc).attr('fill', d => colors(d.data.activity)).attr('stroke', '#fff').attr('stroke-width', 4)
-            .on('mousemove', (event, d) => {
-                tt.innerHTML = `${d.data.activity}: ${d.data.hours.toLocaleString()} hrs`;
-                tt.style.left = event.clientX + 'px';
-                tt.style.top = event.clientY + 'px';
-                tt.style.display = 'block';
-            })
-            .on('mouseleave', () => { tt.style.display = 'none'; });
-
-        svg.append('text').attr('text-anchor', 'middle').attr('dy', '-0.5em')
-            .style('font-weight', 900).style('font-size', '24px').attr('fill', '#0f172a').text(total.toLocaleString());
-        svg.append('text').attr('text-anchor', 'middle').attr('dy', '1.2em')
-            .style('fill', '#64748b').style('font-size', '11px').text('Volunteer Hours');
-        
-        const pctFmt = d => {
-            const p = d.data.hours / total * 100;
-            return p > 8 ? `${Math.round(p)}%` : '';
-        };
-        addSliceLabels(svg, arcs, arc, pctFmt);
-    }
     
     // ---------------------- Content Population ----------------------
     function populateContent() {
@@ -318,9 +190,8 @@
       budgetEl.innerHTML = thead + tbody + tfoot;
       
       // Hero KPIs
-      document.getElementById('volHours').textContent = ORG.volunteerHours.reduce((s,v)=>s+v.hours,0).toLocaleString();
+      document.getElementById('volHours').textContent = ORG.volunteerHours.toLocaleString();
       document.getElementById('kidsTotal').textContent = ORG.kidsTotal;
-      document.getElementById('girlsPct').textContent = Math.round(ORG.girlsPct*100) + '%';
     }
 
     // ---------------------- Scroll Animations ----------------------
@@ -342,12 +213,9 @@
 
     // ---------------------- Initial Calls ----------------------
     populateContent();
-    drawGenderChart();
-    drawHoursChart();
     setupScrollAnimations();
 
   });
   </script>
 </body>
 </html>
-
