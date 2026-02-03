@@ -390,6 +390,9 @@
                     <a href="https://www.goodsports.org/" target="_blank" class="flex justify-center transition-transform transform hover:scale-110" title="Good Sports drives equitable access in youth sports and physical activity">
                         <img class="h-14" src="gs.png" alt="Good Sports">
                     </a>
+                    <a href="https://www.elitesports.com/collections/brazilian-jiu-jitsu-bjj-gis" target="_blank" class="flex justify-center transition-transform transform hover:scale-110" title="Elite Sports LLC equips BJJ and Martial Arts academies with world's best selling gear at the lowest prices in the world">
+                        <img class="h-14" src="elite.png" alt="Elite Sports LLC">
+                    </a>
                  </div>
                 <div class="mt-12">
                     <a href="sponsors.html" class="inline-flex items-center text-gray-200 hover:text-white border border-gray-400 hover:border-white px-6 py-3 rounded-lg transition-all duration-300">
@@ -446,38 +449,28 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Define the list of events
              const events = [
-                { name: "DECEMBER OPTIONAL TRAINING", date: "2025-12-31", time: "OFFSEASON" },  
-                
-                { name: "Technical Soccer Skills", date: "2026-01-08", time: "Thursday @6:45pm" },
-                { name: "Technical Soccer Skills", date: "2026-01-15", time: "Thursday @6:45pm" },
-                { name: "Team Specific Training", date: "2026-01-14", time: "Wednesday @6:30pm" },
-                { name: "Technical Soccer Skills", date: "2026-01-22", time: "Thursday @6:45pm" },
-                { name: "Team Specific Training", date: "2026-01-21", time: "Wednesday @6:30pm" },
-                { name: "Technical Soccer Skills", date: "2026-01-29", time: "Thursday @6:45pm" },
-                { name: "Team Specific Training", date: "2026-01-28", time: "Wednesday @6:30pm" },
-                
-                { name: "Technical Soccer Skills", date: "2026-02-05", time: "Thursday @6:45pm" },
-                { name: "Team Specific Training", date: "2026-02-04", time: "Wednesday @6:30pm" },
-                { name: "Technical Soccer Skills", date: "2026-02-12", time: "Thursday @6:45pm" },
-                { name: "Team Specific Training", date: "2026-02-11", time: "Wednesday @6:30pm" },
-                { name: "Braden Deahl Youth Development Day", date: "2026-02-15", time: "Sunday @3:00pm" },
-                { name: "Technical Soccer Skills", date: "2026-02-19", time: "Thursday @6:45pm" },
-                { name: "Team Specific Training", date: "2026-02-18", time: "Wednesday @6:30pm" },
-                { name: "Technical Soccer Skills", date: "2026-02-26", time: "Thursday @6:45pm" },
-                { name: "Arlington Spring Tournament", date: "2026-02-28", time: "Saturday" },
+                { name: "Technical Soccer Skills", date: "2026-02-05", time: "Thursday @6:45pm", location: "📍Casa Chirilagua (Alexandria)" },
+                { name: "Team Specific Training", date: "2026-02-04", time: "Wednesday @6:30pm", location: "📍Casa Chirilagua (Alexandria)" },
+                { name: "Technical Soccer Skills", date: "2026-02-12", time: "Thursday @6:45pm", location: "📍Casa Chirilagua (Alexandria)" },
+                { name: "Team Specific Training", date: "2026-02-11", time: "Wednesday @6:30pm", location: "📍Casa Chirilagua (Alexandria)" },
+                { name: "Braden Deahl Youth Development Day", date: "2026-02-15", time: "Sunday @3:00pm", location: "📍Casa Chirilagua (Alexandria)" },
+                { name: "Technical Soccer Skills", date: "2026-02-19", time: "Thursday @6:45pm", location: "📍Casa Chirilagua (Alexandria)" },
+                { name: "Team Specific Training", date: "2026-02-18", time: "Wednesday @6:30pm", location: "📍Casa Chirilagua (Alexandria)" },
+                { name: "Technical Soccer Skills", date: "2026-02-26", time: "Thursday @6:45pm", location: "📍Casa Chirilagua (Alexandria)" },
+                { name: "Arlington Spring Tournament", date: "2026-02-28", time: "Saturday", location: "📍Arlington" },
 
-                { name: "Arlington Spring Tournament", date: "2026-03-01", time: "Sunday" },
-                { name: "Team Specific Training", date: "2026-03-04", time: "Wednesday @6:30pm" },
-                { name: "Technical Soccer Skills", date: "2026-03-05", time: "Thursday @6:45pm" },
-                { name: "Street Soccer", date: "2026-03-08", time: "Sunday @4:00pm" },
-                { name: "Team Specific Training", date: "2026-03-11", time: "Wednesday @6:30pm" },
-                { name: "Technical Soccer Skills", date: "2026-03-12", time: "Thursday @6:45pm" },
-                { name: "Street Soccer", date: "2026-03-15", time: "Sunday @4:00pm" },
-                { name: "Team Specific Training", date: "2026-03-18", time: "Wednesday @6:30pm" },
-                { name: "Technical Soccer Skills", date: "2026-03-19", time: "Thursday @6:30pm" },
-                { name: "Street Soccer", date: "2026-03-22", time: "Sunday @4:00pm" },
-                { name: "Team Specific Training", date: "2026-03-25", time: "Wednesday @6:30pm" },
-                { name: "Technical Soccer Skills", date: "2026-03-26", time: "Thursday @6:30pm" },
+                { name: "Arlington Spring Tournament", date: "2026-03-01", time: "Sunday", location: "📍Arlington" },
+                { name: "Team Specific Training", date: "2026-03-04", time: "Wednesday @6:30pm", location: "📍Casa Chirilagua (Alexandria)" },
+                { name: "Technical Soccer Skills", date: "2026-03-05", time: "Thursday @6:45pm", location: "📍Casa Chirilagua (Alexandria)" },
+                { name: "Street Soccer", date: "2026-03-08", time: "Sunday @4:00pm", location: "📍Casa Chirilagua (Alexandria)" },
+                { name: "Team Specific Training", date: "2026-03-11", time: "Wednesday @6:30pm", location: "📍Casa Chirilagua (Alexandria)" },
+                { name: "Technical Soccer Skills", date: "2026-03-12", time: "Thursday @6:45pm", location: "📍Casa Chirilagua (Alexandria)" },
+                { name: "Street Soccer", date: "2026-03-15", time: "Sunday @4:00pm", location: "📍Casa Chirilagua (Alexandria)" },
+                { name: "Team Specific Training", date: "2026-03-18", time: "Wednesday @6:30pm", location: "📍Casa Chirilagua (Alexandria)" },
+                { name: "Technical Soccer Skills", date: "2026-03-19", time: "Thursday @6:30pm", location: "📍Casa Chirilagua (Alexandria)" },
+                { name: "Street Soccer", date: "2026-03-22", time: "Sunday @4:00pm", location: "📍Casa Chirilagua (Alexandria)" },
+                { name: "Team Specific Training", date: "2026-03-25", time: "Wednesday @6:30pm", location: "📍Casa Chirilagua (Alexandria)" },
+                { name: "Technical Soccer Skills", date: "2026-03-26", time: "Thursday @6:30pm", location: "📍Casa Chirilagua (Alexandria)" },
                 { name: "Prince William Tournament", date: "2026-03-28", time: "Saturday" },
                 { name: "Prince William Tournament", date: "2026-03-29", time: "Sunday" },
                 
@@ -550,6 +543,7 @@
                         <div>
                             <p class="font-bold text-lg">${event.name}</p>
                             <p class="text-gray-600">${event.time}</p>
+                            <p class="text-gray-600">${event.location}</p>
                         </div>
                     `;
                     container.appendChild(eventElement);
@@ -562,6 +556,7 @@
 
 </body>
 </html>
+
 
 
 
