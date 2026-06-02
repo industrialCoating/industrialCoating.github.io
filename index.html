@@ -449,19 +449,129 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Define the list of events
              const events = [
-                { name: "Technical Soccer Skills", date: "2026-05-28", time: "Thursday @6:45pm", location: "📍Randolph ES (Arlington)"   },
-                { name: "Street Soccer", date: "2026-05-31", time: "Sunday OFF", location: "OFF"   },
-                { name: "Team Specific Training", date: "2026-06-02", time: "Tuesday @6:30pm", location: "📍Randolph ES (Arlington)"   },
-                { name: "Technical Soccer Skills", date: "2026-06-04", time: "Thursday @6:30pm", location: "📍Randolph ES (Arlington)"   },
-                { name: "Braden Deahl Youth Development Day", date: "2026-06-07", time: "Sunday @4:00pm", location: "📍TBD" },
-                { name: "Team Specific Training", date: "2026-06-09", time: "Tuesday @6:30pm", location: "📍Randolph ES (Arlington)" },
-                { name: "Technical Soccer Skills", date: "2026-06-11", time: "Thursday @6:30pm", location: "📍Randolph ES (Arlington)" },
+                { name: "Team Specific Training", date: "2026-06-02", time: "Tuesday @6:45pm", location: "📍Randolph ES (Arlington)"   },
+                { name: "Technical Soccer Skills", date: "2026-06-04", time: "Thursday @6:45pm", location: "📍Randolph ES (Arlington)"   },
+                { name: "Braden Deahl Youth Development Day", date: "2026-06-07", time: "Sunday @4:00pm", location: "📍Casa Chirilagua (Alexandria)" },
+                { name: "Team Specific Training", date: "2026-06-09", time: "Tuesday @6:45pm", location: "📍Randolph ES (Arlington)" },
+                { name: "Technical Soccer Skills", date: "2026-06-11", time: "Thursday @6:45pm", location: "📍Randolph ES (Arlington)" },
                 { name: "Street Soccer", date: "2026-06-14", time: "Sunday @4:00pm", location: "📍TBD" },
-                { name: "Team Specific Training", date: "2026-06-16", time: "Tuesday @6:30pm", location: "📍Randolph ES (Arlington)" },
-                { name: "Technical Soccer Skills", date: "2026-06-18", time: "Thursday @6:30pm", location: "📍Randolph ES (Arlington)" },
+                { name: "Team Specific Training", date: "2026-06-16", time: "Tuesday @6:45pm", location: "📍Randolph ES (Arlington)" },
+                { name: "Technical Soccer Skills", date: "2026-06-18", time: "Thursday @6:45pm", location: "📍Randolph ES (Arlington)" },
                 { name: "JULY OPTIONAL TRAINING", date: "2026-07-31", time: "JULY OFF", location: "OFF" },
-                { name: "Street Soccer", date: "2026-08-02", time: "Sunday @4pm", location: "📍TBD" }
-            ];
+
+    // ── AUGUST ──────────────────────────────────────────────────────────────
+
+    { name: "Braden Deahl Community Day", date: "2026-08-01", time: "Saturday @10:00am", location: "📍TBD" },
+
+    { name: "Girls Technical Skills", date: "2026-08-03", time: "Monday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Technical Skills", date: "2026-08-04", time: "Tuesday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Girls Collective Skills", date: "2026-08-05", time: "Wednesday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Collective Skills", date: "2026-08-06", time: "Thursday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Street Soccer", date: "2026-08-08", time: "Saturday @10:00am", location: "📍TBD" },
+
+    { name: "Girls Technical Skills", date: "2026-08-10", time: "Monday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Technical Skills", date: "2026-08-11", time: "Tuesday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Girls Collective Skills", date: "2026-08-12", time: "Wednesday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Collective Skills", date: "2026-08-13", time: "Thursday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Street Soccer", date: "2026-08-15", time: "Saturday @10:00am", location: "📍TBD" },
+
+    { name: "Girls Technical Skills", date: "2026-08-17", time: "Monday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Technical Skills", date: "2026-08-18", time: "Tuesday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Girls Collective Skills", date: "2026-08-19", time: "Wednesday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Collective Skills", date: "2026-08-20", time: "Thursday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Street Soccer", date: "2026-08-22", time: "Saturday @10:00am", location: "📍TBD" },
+
+    { name: "Girls Technical Skills", date: "2026-08-24", time: "Monday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Technical Skills", date: "2026-08-25", time: "Tuesday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Girls Collective Skills", date: "2026-08-26", time: "Wednesday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Collective Skills", date: "2026-08-27", time: "Thursday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "🏆 Annapolis Cup", date: "2026-08-29", time: "Saturday – Sunday", location: "📍Annapolis, MD" },
+
+    // ── SEPTEMBER ───────────────────────────────────────────────────────────
+
+    { name: "Boys Technical Skills", date: "2026-09-01", time: "Tuesday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Girls Collective Skills", date: "2026-09-02", time: "Wednesday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Collective Skills", date: "2026-09-03", time: "Thursday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "🏆 Copa Villareal", date: "2026-09-05", time: "Saturday – Sunday", location: "📍Fairfax County, VA" },
+
+    { name: "Girls Technical Skills", date: "2026-09-07", time: "Monday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Technical Skills", date: "2026-09-08", time: "Tuesday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Girls Collective Skills", date: "2026-09-09", time: "Wednesday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Collective Skills", date: "2026-09-10", time: "Thursday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Street Soccer", date: "2026-09-12", time: "Saturday @10:00am", location: "📍TBD" },
+
+    { name: "Girls Technical Skills", date: "2026-09-14", time: "Monday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Technical Skills", date: "2026-09-15", time: "Tuesday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Girls Collective Skills", date: "2026-09-16", time: "Wednesday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Collective Skills", date: "2026-09-17", time: "Thursday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Street Soccer", date: "2026-09-19", time: "Saturday @10:00am", location: "📍TBD" },
+
+    { name: "Girls Technical Skills", date: "2026-09-21", time: "Monday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Technical Skills", date: "2026-09-22", time: "Tuesday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Girls Collective Skills", date: "2026-09-23", time: "Wednesday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Collective Skills", date: "2026-09-24", time: "Thursday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Street Soccer", date: "2026-09-26", time: "Saturday @10:00am", location: "📍TBD" },
+
+    { name: "Girls Technical Skills", date: "2026-09-28", time: "Monday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Technical Skills", date: "2026-09-29", time: "Tuesday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Girls Collective Skills", date: "2026-09-30", time: "Wednesday @5:00pm", location: "📍MVCS (Alexandria)" },
+
+    // ── OCTOBER ─────────────────────────────────────────────────────────────
+
+    { name: "Boys Collective Skills", date: "2026-10-01", time: "Thursday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Street Soccer", date: "2026-10-03", time: "Saturday @10:00am", location: "📍TBD" },
+
+    { name: "Girls Technical Skills", date: "2026-10-05", time: "Monday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Technical Skills", date: "2026-10-06", time: "Tuesday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Girls Collective Skills", date: "2026-10-07", time: "Wednesday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Collective Skills", date: "2026-10-08", time: "Thursday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "🏆 MDSL Fall Classic (Boys)", date: "2026-10-10", time: "Saturday – Sunday", location: "📍Montgomery County, MD" },
+    { name: "🏆 Discovery Cup (Girls)", date: "2026-10-10", time: "Saturday – Sunday", location: "📍Maryland SoccerPlex (Germantown, MD)" },
+
+    { name: "Girls Technical Skills", date: "2026-10-12", time: "Monday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Technical Skills", date: "2026-10-13", time: "Tuesday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Girls Collective Skills", date: "2026-10-14", time: "Wednesday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Collective Skills", date: "2026-10-15", time: "Thursday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Braden Deahl Community Day", date: "2026-10-17", time: "Saturday @10:00am", location: "📍TBD" },
+
+    { name: "Girls Technical Skills", date: "2026-10-19", time: "Monday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Technical Skills", date: "2026-10-20", time: "Tuesday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Girls Collective Skills", date: "2026-10-21", time: "Wednesday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Collective Skills", date: "2026-10-22", time: "Thursday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Street Soccer", date: "2026-10-24", time: "Saturday @10:00am", location: "📍TBD" },
+
+    { name: "Girls Technical Skills", date: "2026-10-26", time: "Monday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Technical Skills", date: "2026-10-27", time: "Tuesday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Girls Collective Skills", date: "2026-10-28", time: "Wednesday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Collective Skills", date: "2026-10-29", time: "Thursday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Street Soccer", date: "2026-10-31", time: "Saturday @10:00am", location: "📍TBD" },
+
+    // ── NOVEMBER ────────────────────────────────────────────────────────────
+
+    { name: "Girls Technical Skills", date: "2026-11-02", time: "Monday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Technical Skills", date: "2026-11-03", time: "Tuesday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Girls Collective Skills", date: "2026-11-04", time: "Wednesday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Collective Skills", date: "2026-11-05", time: "Thursday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Braden Deahl Community Day", date: "2026-11-07", time: "Saturday @10:00am", location: "📍TBD" },
+
+    { name: "Girls Technical Skills", date: "2026-11-09", time: "Monday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Technical Skills", date: "2026-11-10", time: "Tuesday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Girls Collective Skills", date: "2026-11-11", time: "Wednesday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Collective Skills", date: "2026-11-12", time: "Thursday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Street Soccer", date: "2026-11-14", time: "Saturday @10:00am", location: "📍TBD" },
+
+    { name: "Girls Technical Skills", date: "2026-11-16", time: "Monday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Technical Skills", date: "2026-11-17", time: "Tuesday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "Girls Collective Skills", date: "2026-11-18", time: "Wednesday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Collective Skills", date: "2026-11-19", time: "Thursday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    { name: "🏆 Nation's Capital Cup (Girls)", date: "2026-11-21", time: "Saturday – Sunday", location: "📍McLean, VA" },
+
+    { name: "Girls Technical Skills", date: "2026-11-23", time: "Monday @5:00pm", location: "📍MVCS (Alexandria)" },
+    { name: "Boys Technical Skills", date: "2026-11-24", time: "Tuesday @6:30pm", location: "📍Randolph ES (Arlington)" },
+    // Nov 26 = Thanksgiving — no training
+    { name: "🏆 Nation's Capital Cup (Boys)", date: "2026-11-28", time: "Saturday – Sunday", location: "📍McLean, VA" },
+
+];
 
             const container = document.getElementById("events-container");
             const today = new Date();
