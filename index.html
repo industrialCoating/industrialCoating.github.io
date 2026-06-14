@@ -588,34 +588,47 @@ const events = [
             const today = new Date();
             today.setHours(0, 0, 0, 0);
 
-            const upcomingEvents = events
-                .filter(event => new Date(event.date + "T00:00:00") >= today)
-                .sort((a, b) => new Date(a.date) - new Date(b.date));
+const upcomingEvents = events
+    .filter(event => new Date(event.date + "T00:00:00") >= today)
+    .sort((a, b) => new Date(a.date) - new Date(b.date));
 
-            if (upcomingEvents.length > 0) {
-                upcomingEvents.forEach(event => {
-                    const eventDate = new Date(event.date + "T00:00:00");
-                    const day = eventDate.getDate();
-                    const month = eventDate.toLocaleString("en-US", { month: "short" }).toUpperCase();
+if (upcomingEvents.length > 0) {
+    // Group by date
+    const grouped = {};
+    upcomingEvents.forEach(event => {
+        if (!grouped[event.date]) grouped[event.date] = [];
+        grouped[event.date].push(event);
+    });
 
-                    const eventElement = document.createElement("div");
-                    eventElement.className = "flex items-center gap-4 pb-4 border-b border-gray-200 last:border-b-0";
-                    eventElement.innerHTML = `
-                        <div class="flex-shrink-0 text-center bg-gray-800 text-white rounded-lg p-3 w-20">
-                            <p class="text-3xl font-bold">${day}</p>
-                            <p class="text-sm font-semibold">${month}</p>
-                        </div>
-                        <div>
-                            <p class="font-bold text-lg">${event.name}</p>
-                            <p class="text-gray-600">${event.time}</p>
-                            <p class="text-gray-600">${event.location}</p>
-                        </div>
-                    `;
-                    container.appendChild(eventElement);
-                });
-            } else {
-                container.innerHTML = `<p class="text-center text-gray-600">No upcoming events scheduled. Please check back soon!</p>`;
-            }
+    Object.entries(grouped).forEach(([date, dayEvents]) => {
+        const eventDate = new Date(date + "T00:00:00");
+        const day = eventDate.getDate();
+        const month = eventDate.toLocaleString("en-US", { month: "short" }).toUpperCase();
+
+        const wrapper = document.createElement("div");
+        wrapper.className = "flex items-start gap-4 pb-4 border-b border-gray-200 last:border-b-0";
+
+        const eventsHTML = dayEvents.map(event => `
+            <div class="mb-1 last:mb-0">
+                <p class="font-bold text-lg">${event.name}</p>
+                <p class="text-gray-600">${event.time}</p>
+                <p class="text-gray-600">${event.location}</p>
+            </div>
+        `).join('');
+
+        wrapper.innerHTML = `
+            <div class="flex-shrink-0 text-center bg-gray-800 text-white rounded-lg p-3 w-20">
+                <p class="text-3xl font-bold">${day}</p>
+                <p class="text-sm font-semibold">${month}</p>
+            </div>
+            <div>${eventsHTML}</div>
+        `;
+        container.appendChild(wrapper);
+    });
+} else {
+    container.innerHTML = `<p class="text-center text-gray-600">No upcoming events scheduled. Please check back soon!</p>`;
+}
+
         });
     </script>
 
