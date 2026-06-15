@@ -205,15 +205,25 @@
         const practiceLocationLayer = L.layerGroup();
         const tournamentLocations = L.layerGroup();
 
-        const practiceLocation = {
-            lat: 38.8495914,
-            lng: -77.0905485,
-            title: "Training",
-            icon: soccerIcon
-        };
-        L.marker([practiceLocation.lat, practiceLocation.lng], { icon: practiceLocation.icon })
-            .addTo(practiceLocationLayer)
-            .bindPopup(`<b>${practiceLocation.title}</b><br><br>August - December: <br>• Tuesday @6:30pm<br>• Thursday @6:30pm<br>• Sunday @4pm<br><br>January - June: <br>• Tuesday @6:45pm<br>• Thursday @6:45pm<br>• Sunday @4pm<br><br>📍<a href="https://www.google.com/maps/search/?api=1&query=1306+S+Quincy+St+Arlington+VA+22204" target="_blank">Randolph & Drew ES</a> `);
+// Boys Practice
+L.marker([38.8495914, -77.0905485], { icon: soccerIcon })
+    .addTo(practiceLocationLayer)
+    .bindPopup(`
+        <b>Boys Practice Location</b><br><br>
+        📍<a href="https://www.google.com/maps/search/?api=1&query=1306+S+Quincy+St+Arlington+VA+22204" target="_blank">
+        Randolph ES
+        </a>
+    `);
+
+// Girls Practice
+L.marker([38.8397302, -77.0588596], { icon: soccerIcon })
+    .addTo(practiceLocationLayer)
+    .bindPopup(`
+        <b>Girls Practice Location</b><br><br>
+        📍<a href="https://www.google.com/maps/search/?api=1&query=38.8397302,-77.0588596" target="_blank">
+        Four Mile Run Park
+        </a>
+    `);
 
         const tournaments = [
             { 
